@@ -1,6 +1,7 @@
-import 'package:demo/example_page.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
+
+import 'example_page.dart';
 
 class DraggableTabPage extends StatefulWidget {
   @override

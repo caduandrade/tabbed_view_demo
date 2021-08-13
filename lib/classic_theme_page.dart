@@ -1,6 +1,7 @@
-import 'package:demo/example_multi_view_page.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
+
+import 'example_multi_view_page.dart';
 
 class ClassicThemePage extends StatefulWidget {
   @override

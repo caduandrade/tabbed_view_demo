@@ -1,15 +1,9 @@
-import 'package:demo/example_page.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class ContentBuilderPage extends StatefulWidget {
+class ContentBuilderExample extends StatelessWidget {
   @override
-  ContentBuilderPageState createState() => ContentBuilderPageState();
-}
-
-class ContentBuilderPageState extends ExamplePageState {
-  @override
-  Widget buildContent() {
+  Widget build(BuildContext context) {
     var tabs = [
       TabData(text: 'Tab 1'),
       TabData(text: 'Tab 2'),

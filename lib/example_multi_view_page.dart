@@ -1,5 +1,6 @@
-import 'package:demo/example_page.dart';
 import 'package:flutter/material.dart';
+
+import 'example_page.dart';
 
 abstract class ExampleMultiViewPageState<VIEW> extends ExamplePageState {
   VIEW? _currentView;
