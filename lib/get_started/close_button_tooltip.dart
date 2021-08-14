@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_page.dart';
-
-class CloseButtonTooltipPage extends StatefulWidget {
+class CloseButtonTooltipExample extends StatelessWidget {
   @override
-  ListeningTabClosePageState createState() => ListeningTabClosePageState();
-}
-
-class ListeningTabClosePageState extends ExamplePageState {
-  @override
-  Widget buildContent() {
+  Widget build(BuildContext context) {
     var tabs = [
       TabData(text: 'Tab 1'),
       TabData(text: 'Tab 2'),

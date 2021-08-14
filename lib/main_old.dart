@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tabbed_view_demo/simple_page.dart';
 import 'package:tabbed_view_demo/tab_close_listener_page.dart';
 import 'package:tabbed_view_demo/tab_selection_listener_page.dart';
 import 'package:tabbed_view_demo/tabs_area_buttons_page.dart';
@@ -8,7 +7,7 @@ import 'package:tabbed_view_demo/tabs_area_theme_page.dart';
 import 'add_tab_page.dart';
 import 'change_tab_page.dart';
 import 'classic_theme_page.dart';
-import 'close_button_tooltip_page.dart';
+import 'get_started/close_button_tooltip.dart';
 import 'custom_menu.dart';
 import 'custom_tab.dart';
 import 'dark_theme_page.dart';
@@ -146,9 +145,7 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
 
   Widget _buildExample() {
     Widget example;
-    if (_currentExample == Example.simple) {
-      example = SimplePage();
-    } else if (_currentExample == Example.content_builder) {
+    if (_currentExample == Example.content_builder) {
       example = ContentBuilderExample();
     } else if (_currentExample == Example.tabs_area_buttons) {
       example = TabsAreaButtonsPage();
@@ -181,7 +178,7 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
     } else if (_currentExample == Example.tab_selection_listener) {
       example = TabSelectionListenerPage();
     } else if (_currentExample == Example.close_button_tooltip) {
-      example = CloseButtonTooltipPage();
+      example = CloseButtonTooltipExample();
     } else if (_currentExample == Example.hidden_tabs_menu_button_icon) {
       example = HiddenTabsMenuButtonIconPage();
     } else {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multi_split_view/multi_split_view.dart';
 
+@deprecated
 abstract class ExamplePageState extends State<StatefulWidget> {
   late MultiSplitViewController _horizontalController;
   late MultiSplitViewController _verticalController;
