@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view_demo/tab_close_listener_page.dart';
-import 'package:tabbed_view_demo/tab_selection_listener_page.dart';
+import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
 import 'package:tabbed_view_demo/tabs_area_buttons_page.dart';
 import 'package:tabbed_view_demo/tabs_area_theme_page.dart';
 
@@ -170,7 +170,7 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
     } else if (_currentExample == Example.tab_close_listener) {
       example = TabCloseListenerPage();
     } else if (_currentExample == Example.tab_selection_listener) {
-      example = TabSelectionListenerPage();
+      example = TabSelectionListenerExample();
     } else if (_currentExample == Example.close_button_tooltip) {
       example = CloseButtonTooltipExample();
     } else if (_currentExample == Example.hidden_tabs_menu_button_icon) {
