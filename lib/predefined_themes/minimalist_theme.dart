@@ -1,37 +1,36 @@
+import 'package:demoflu/demoflu.dart';
+import 'package:demoflu/src/menu/example_menu_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_multi_view_page.dart';
-
-class MinimalistThemePage extends StatefulWidget {
+class MinimalistThemeExample extends ExampleStateful {
+  MinimalistThemeExample(ExampleMenuNotifier notifier)
+      : super(menuNotifier: notifier);
   @override
   MinimalistThemePageState createState() => MinimalistThemePageState();
-}
-
-enum _View { normal, change_color }
-
-class MinimalistThemePageState extends ExampleMultiViewPageState<_View> {
-  @override
-  _View defaultView() {
-    return _View.normal;
-  }
 
   @override
-  List<Widget> buildExampleWidgets() {
+  List<ExampleMenuWidget> menuWidgets() {
     return [
-      buttonView('Normal', _View.normal),
-      buttonView('Change color', _View.change_color)
+      MenuButton(id: 1, name: 'Normal'),
+      MenuButton(id: 2, name: 'Change color set')
     ];
   }
+}
+
+class MinimalistThemePageState
+    extends ExampleStatefulState<MinimalistThemeExample> {
+  int _buttonId = 1;
 
   @override
-  Widget buildContentView(_View currentView) {
-    switch (currentView) {
-      case _View.normal:
+  Widget build(BuildContext context) {
+    switch (_buttonId) {
+      case 1:
         return _normal();
-      case _View.change_color:
-        return _changeColor();
+      case 2:
+        return _changeColorSet();
     }
+    return Container();
   }
 
   Widget _normal() {
@@ -46,7 +45,7 @@ class MinimalistThemePageState extends ExampleMultiViewPageState<_View> {
     return tabbedView;
   }
 
-  Widget _changeColor() {
+  Widget _changeColorSet() {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       tabs.add(
@@ -57,5 +56,12 @@ class MinimalistThemePageState extends ExampleMultiViewPageState<_View> {
         controller: controller,
         theme: TabbedViewTheme.minimalist(colorSet: Colors.blue));
     return tabbedView;
+  }
+
+  @override
+  void onButtonClick(int id) {
+    setState(() {
+      _buttonId = id;
+    });
   }
 }

@@ -53,6 +53,7 @@ flutter:
     - lib/get_started/close_button_tooltip.dart
     - lib/get_started/basic.dart
     - lib/predefined_themes/mobile_theme.dart
+    - lib/predefined_themes/minimalist_theme.dart
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
