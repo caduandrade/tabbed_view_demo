@@ -1,53 +1,45 @@
+import 'package:demoflu/demoflu.dart';
+import 'package:demoflu/src/menu/example_menu_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_multi_view_page.dart';
-
-class CustomTabPage extends StatefulWidget {
-  @override
-  CustomTabPageState createState() => CustomTabPageState();
-}
-
-enum _View {
-  extra_button,
-  nonclosable,
-  top_alignment,
-  text_style,
-  extra_button_override_color
-}
-
-class CustomTabPageState extends ExampleMultiViewPageState<_View> {
-  @override
-  _View defaultView() {
-    return _View.extra_button;
-  }
+class CustomTabExample extends ExampleStateful {
+  CustomTabExample(ExampleMenuNotifier menuNotifier)
+      : super(menuNotifier: menuNotifier);
 
   @override
-  List<Widget> buildExampleWidgets() {
+  CustomTabExampleState createState() => CustomTabExampleState();
+
+  @override
+  List<ExampleMenuWidget> menuWidgets() {
     return [
-      buttonView('Extra button', _View.extra_button),
-      buttonView('Non-closable', _View.nonclosable),
-      buttonView('Top alignment', _View.top_alignment),
-      buttonView('Text style', _View.text_style),
-      buttonView(
-          'Extra button - override color', _View.extra_button_override_color)
+      MenuButton(id: 1, name: 'Extra button'),
+      MenuButton(id: 2, name: 'Extra button - override color'),
+      MenuButton(id: 3, name: 'Non-closable'),
+      MenuButton(id: 4, name: 'Top alignment'),
+      MenuButton(id: 5, name: 'Text style')
     ];
   }
+}
+
+class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
+  int _buttonId = 1;
 
   @override
-  Widget buildContentView(_View currentView) {
-    switch (currentView) {
-      case _View.extra_button:
+  Widget build(BuildContext context) {
+    switch (_buttonId) {
+      case 1:
         return _extraButton();
-      case _View.nonclosable:
-        return _nonclosable();
-      case _View.top_alignment:
-        return _topAlignment();
-      case _View.text_style:
-        return _textStyle();
-      case _View.extra_button_override_color:
+      case 2:
         return _extraButtonOverrideColor();
+      case 3:
+        return _nonClosable();
+      case 4:
+        return _topAlignment();
+      case 5:
+        return _textStyle();
     }
+    return Container();
   }
 
   Widget _extraButton() {
@@ -58,7 +50,7 @@ class CustomTabPageState extends ExampleMultiViewPageState<_View> {
     return tabbedView;
   }
 
-  Widget _nonclosable() {
+  Widget _nonClosable() {
     var tabs = [
       TabData(text: 'Tab'),
       TabData(text: 'Non-closable tab', closable: false)
@@ -109,5 +101,12 @@ class CustomTabPageState extends ExampleMultiViewPageState<_View> {
     ];
     TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
     return tabbedView;
+  }
+
+  @override
+  void onButtonClick(int id) {
+    setState(() {
+      _buttonId = id;
+    });
   }
 }

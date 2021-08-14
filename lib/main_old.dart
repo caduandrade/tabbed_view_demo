@@ -9,7 +9,7 @@ import 'change_tab_page.dart';
 import 'classic_theme_page.dart';
 import 'get_started/close_button_tooltip.dart';
 import 'custom_menu.dart';
-import 'custom_tab.dart';
+import 'tab/custom_tab.dart';
 import 'dark_theme_page.dart';
 import 'draggable_tab_page.dart';
 import 'from_the_scratch_page.dart';
@@ -163,8 +163,6 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
       example = DraggableTabPage();
     } else if (_currentExample == Example.tabs_area_theme) {
       example = TabsAreaThemePage();
-    } else if (_currentExample == Example.custom_tab) {
-      example = CustomTabPage();
     } else if (_currentExample == Example.custom_menu) {
       example = CustomMenuPage();
     } else if (_currentExample == Example.from_the_scratch) {

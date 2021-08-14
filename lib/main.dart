@@ -1,6 +1,7 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view_demo/predefined_themes/minimalist_theme.dart';
+import 'package:tabbed_view_demo/tab/custom_tab.dart';
 
 import 'get_started/basic.dart';
 import 'get_started/close_button_tooltip.dart';
@@ -32,6 +33,12 @@ void main() {
                 name: 'Close button tooltip',
                 content: CloseButtonTooltipExample(),
                 codeFile: 'lib/get_started/close_button_tooltip.dart')
+          ]),
+          Section(name: 'Tab', examples: [
+            Example(
+                name: 'Custom tab',
+                content: CustomTabExample(menuNotifier),
+                codeFile: 'lib/tab/custom_tab.dart')
           ]),
           Section(name: 'Predefined themes', examples: [
             Example(
