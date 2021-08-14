@@ -3,22 +3,24 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "main.dart.js": "bc625dd69d8fa44c4d3cdb4d2decc291",
+  "main.dart.js": "09390f2619f033ef79eb6fe1f3516c94",
 "version.json": "cb8d214bc995cafae5619df4c768f131",
 "assets/lib/get_started/content_builder.dart": "dc875f00f7fd874233573a7d5164ce2b",
-"assets/lib/get_started/basic.dart": "f50cc52374e6271b48a7950c69052d43",
 "assets/lib/get_started/close_button_tooltip.dart": "129253b5d1b6af5860f85b7efceb955b",
+"assets/lib/get_started/basic.dart": "f50cc52374e6271b48a7950c69052d43",
+"assets/lib/predefined_themes/mobile_theme.dart": "0ef33695fb0b42ff116e8752b2f97485",
+"assets/lib/predefined_themes/minimalist_theme.dart": "4ec49ddf84409c64884336fc25669a7e",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/flex_color_picker/assets/opacity.png": "49c4f3bcb1b25364bb4c255edcaaf5b2",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/AssetManifest.json": "9e94771e4bcd9e912d37bceea641368c",
-"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/AssetManifest.json": "f80617a7366a13cf1d03ceff863e752a",
 "assets/NOTICES": "f2364274ee0c2b412f27f3debb09a0a9",
+"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "5e8d7475d064ffdfefd16dac298f9707",
-"/": "5e8d7475d064ffdfefd16dac298f9707",
+"index.html": "fe4887b878d1d1ed734c8f9d00cb0041",
+"/": "fe4887b878d1d1ed734c8f9d00cb0041",
 "manifest.json": "b3b4999ffcf5c4e0855e1b26263d3524"
 };
 
