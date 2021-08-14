@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'example_page.dart';
 
+@deprecated
 abstract class ExampleMultiViewPageState<VIEW> extends ExamplePageState {
   VIEW? _currentView;
 

@@ -1,41 +1,39 @@
+import 'package:demoflu/demoflu.dart';
+import 'package:demoflu/src/menu/example_menu_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_multi_view_page.dart';
-
-class MobileThemePage extends StatefulWidget {
-  @override
-  MobileThemePageState createState() => MobileThemePageState();
-}
-
-enum _View { normal, change_color_set, change_highlighted_tab_color }
-
-class MobileThemePageState extends ExampleMultiViewPageState<_View> {
-  @override
-  _View defaultView() {
-    return _View.normal;
-  }
+class MobileThemeExample extends ExampleStateful {
+  MobileThemeExample(ExampleMenuNotifier notifier)
+      : super(menuNotifier: notifier);
 
   @override
-  List<Widget> buildExampleWidgets() {
+  MobileThemeExampleState createState() => MobileThemeExampleState();
+
+  @override
+  List<ExampleMenuWidget> menuWidgets() {
     return [
-      buttonView('Normal', _View.normal),
-      buttonView('Change color set', _View.change_color_set),
-      buttonView(
-          'Change highlightedTabColor', _View.change_highlighted_tab_color)
+      MenuButton(id: 1, name: 'Normal'),
+      MenuButton(id: 2, name: 'Change color set'),
+      MenuButton(id: 3, name: 'Change highlighted tab color')
     ];
   }
+}
+
+class MobileThemeExampleState extends ExampleStatefulState<MobileThemeExample> {
+  int _buttonId = 1;
 
   @override
-  Widget buildContentView(_View currentView) {
-    switch (currentView) {
-      case _View.normal:
+  Widget build(BuildContext context) {
+    switch (_buttonId) {
+      case 1:
         return _normal();
-      case _View.change_color_set:
+      case 2:
         return _changeColorSet();
-      case _View.change_highlighted_tab_color:
+      case 3:
         return _changeHighlightedTabColor();
     }
+    return Container();
   }
 
   Widget _normal() {
@@ -73,5 +71,12 @@ class MobileThemePageState extends ExampleMultiViewPageState<_View> {
         TabbedViewTheme.mobile(highlightedTabColor: Colors.green[700]!);
     TabbedView tabbedView = TabbedView(controller: controller, theme: theme);
     return tabbedView;
+  }
+
+  @override
+  void onButtonClick(int buttonId) {
+    setState(() {
+      _buttonId = buttonId;
+    });
   }
 }

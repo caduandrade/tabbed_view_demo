@@ -16,7 +16,7 @@ import 'from_the_scratch_page.dart';
 import 'get_started/content_builder.dart';
 import 'hidden_tabs_menu_button_icon_page.dart';
 import 'minimalist_theme_page.dart';
-import 'mobile_theme_page.dart';
+import 'predefined_themes/mobile_theme.dart';
 import 'new_model_page.dart';
 
 void main() {
@@ -163,8 +163,6 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
       example = DraggableTabPage();
     } else if (_currentExample == Example.tabs_area_theme) {
       example = TabsAreaThemePage();
-    } else if (_currentExample == Example.mobile_theme) {
-      example = MobileThemePage();
     } else if (_currentExample == Example.minimalist_theme) {
       example = MinimalistThemePage();
     } else if (_currentExample == Example.custom_tab) {

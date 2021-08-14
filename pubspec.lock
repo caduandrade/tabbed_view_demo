@@ -56,7 +56,7 @@ packages:
       name: demoflu
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.0"
+    version: "0.6.0"
   fake_async:
     dependency: transitive
     description:
@@ -178,10 +178,10 @@ packages:
   tabbed_view:
     dependency: "direct main"
     description:
-      path: "../tabbed_view"
-      relative: true
-    source: path
-    version: "1.3.0"
+      name: tabbed_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.3.1"
   term_glyph:
     dependency: transitive
     description:
