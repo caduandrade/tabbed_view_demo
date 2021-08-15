@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view_demo/tab_close_listener_page.dart';
 import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
-import 'package:tabbed_view_demo/tabs_area_buttons_page.dart';
+import 'package:tabbed_view_demo/tabs_area/tabs_area_buttons.dart';
 import 'package:tabbed_view_demo/tabs_area_theme_page.dart';
 
 import 'add_tab_page.dart';
@@ -11,7 +11,7 @@ import 'get_started/close_button_tooltip.dart';
 import 'custom_menu.dart';
 import 'tab/custom_tab.dart';
 import 'dark_theme_page.dart';
-import 'draggable_tab_page.dart';
+import 'tab/draggable_tab.dart';
 import 'from_the_scratch_page.dart';
 import 'get_started/content_builder.dart';
 import 'hidden_tabs_menu_button_icon_page.dart';
@@ -148,7 +148,7 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
     if (_currentExample == Example.content_builder) {
       example = ContentBuilderExample();
     } else if (_currentExample == Example.tabs_area_buttons) {
-      example = TabsAreaButtonsPage();
+      example = TabsAreaButtonsExample();
     } else if (_currentExample == Example.dark_theme) {
       example = DarkThemePage();
     } else if (_currentExample == Example.classic_theme) {
@@ -160,7 +160,7 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
     } else if (_currentExample == Example.add_tab) {
       example = AddTabPage();
     } else if (_currentExample == Example.draggable_tab) {
-      example = DraggableTabPage();
+      example = DraggableTabExample();
     } else if (_currentExample == Example.tabs_area_theme) {
       example = TabsAreaThemePage();
     } else if (_currentExample == Example.custom_menu) {

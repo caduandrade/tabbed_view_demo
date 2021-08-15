@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_page.dart';
-
-class TabsAreaButtonsPage extends StatefulWidget {
+class TabsAreaButtonsExample extends StatelessWidget {
   @override
-  TabsAreaButtonsPageState createState() => TabsAreaButtonsPageState();
-}
-
-class TabsAreaButtonsPageState extends ExamplePageState {
-  @override
-  Widget buildContent() {
+  Widget build(BuildContext context) {
     TabbedViewController controller = TabbedViewController([]);
 
     TabbedView tabbedView = TabbedView(
@@ -35,14 +28,5 @@ class TabsAreaButtonsPageState extends ExamplePageState {
           return buttons;
         });
     return tabbedView;
-  }
-
-  @override
-  List<Widget> buildExampleWidgets() {
-    return [ElevatedButton(child: Text('Rebuild'), onPressed: _onRebuild)];
-  }
-
-  _onRebuild() {
-    setState(() {});
   }
 }

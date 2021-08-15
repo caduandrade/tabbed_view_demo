@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_page.dart';
-
-class DraggableTabPage extends StatefulWidget {
+class DraggableTabExample extends StatelessWidget {
   @override
-  DraggableTabPageState createState() => DraggableTabPageState();
-}
-
-class DraggableTabPageState extends ExamplePageState {
-  @override
-  Widget buildContent() {
+  Widget build(BuildContext context) {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       Widget tabContent = Center(child: Text('Content $i'));
@@ -33,14 +26,5 @@ class DraggableTabPageState extends ExamplePageState {
               });
         });
     return tabbedView;
-  }
-
-  @override
-  List<Widget> buildExampleWidgets() {
-    return [ElevatedButton(child: Text('Rebuild'), onPressed: _onRebuild)];
-  }
-
-  _onRebuild() {
-    setState(() {});
   }
 }
