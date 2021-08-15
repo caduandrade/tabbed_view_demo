@@ -1,5 +1,6 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
+import 'package:tabbed_view_demo/predefined_themes/dark_theme.dart';
 import 'package:tabbed_view_demo/predefined_themes/minimalist_theme.dart';
 import 'package:tabbed_view_demo/tab/custom_tab.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
@@ -59,6 +60,10 @@ void main() {
                 codeFile: 'lib/tabs_area/tabs_area_buttons.dart')
           ]),
           Section(name: 'Predefined themes', examples: [
+            Example(
+                name: 'Dark',
+                content: DarkThemeExample(menuNotifier),
+                codeFile: 'lib/predefined_themes/dark_theme.dart'),
             Example(
                 name: 'Mobile',
                 content: MobileThemeExample(menuNotifier),

@@ -1,5 +1,4 @@
 import 'package:demoflu/demoflu.dart';
-import 'package:demoflu/src/menu/example_menu_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 

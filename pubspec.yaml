@@ -26,7 +26,7 @@ dependencies:
   multi_split_view: ^1.1.0+2
   tabbed_view: ^1.3.1
     #path: ../tabbed_view
-  demoflu: ^0.6.0
+  demoflu: ^0.6.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -56,6 +56,7 @@ flutter:
     - lib/tab/tab_selection_listener.dart
     - lib/tab/draggable_tab.dart
     - lib/tabs_area/tabs_area_buttons.dart
+    - lib/predefined_themes/dark_theme.dart
     - lib/predefined_themes/mobile_theme.dart
     - lib/predefined_themes/minimalist_theme.dart
 

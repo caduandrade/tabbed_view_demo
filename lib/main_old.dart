@@ -10,7 +10,7 @@ import 'classic_theme_page.dart';
 import 'get_started/close_button_tooltip.dart';
 import 'custom_menu.dart';
 import 'tab/custom_tab.dart';
-import 'dark_theme_page.dart';
+import 'predefined_themes/dark_theme.dart';
 import 'tab/draggable_tab.dart';
 import 'from_the_scratch_page.dart';
 import 'get_started/content_builder.dart';
@@ -149,8 +149,6 @@ class _TabbedViewDemoPageState extends State<TabbedViewDemoPage> {
       example = ContentBuilderExample();
     } else if (_currentExample == Example.tabs_area_buttons) {
       example = TabsAreaButtonsExample();
-    } else if (_currentExample == Example.dark_theme) {
-      example = DarkThemePage();
     } else if (_currentExample == Example.classic_theme) {
       example = ClassicThemePage();
     } else if (_currentExample == Example.new_model) {

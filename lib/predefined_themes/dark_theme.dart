@@ -1,37 +1,35 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_multi_view_page.dart';
-
-class DarkThemePage extends StatefulWidget {
-  @override
-  DarkThemePageState createState() => DarkThemePageState();
-}
-
-enum _View { normal, change_color }
-
-class DarkThemePageState extends ExampleMultiViewPageState<_View> {
-  @override
-  _View defaultView() {
-    return _View.normal;
-  }
+class DarkThemeExample extends ExampleStateful {
+  DarkThemeExample(ExampleMenuNotifier notifier)
+      : super(menuNotifier: notifier);
 
   @override
-  List<Widget> buildExampleWidgets() {
+  DarkThemeExampleState createState() => DarkThemeExampleState();
+
+  @override
+  List<ExampleMenuWidget> menuWidgets() {
     return [
-      buttonView('Normal', _View.normal),
-      buttonView('Change color', _View.change_color)
+      MenuButton(id: 1, name: 'Normal'),
+      MenuButton(id: 2, name: 'Change color set')
     ];
   }
+}
+
+class DarkThemeExampleState extends ExampleStatefulState<DarkThemeExample> {
+  int _buttonId = 1;
 
   @override
-  Widget buildContentView(_View currentView) {
-    switch (currentView) {
-      case _View.normal:
+  Widget build(BuildContext context) {
+    switch (_buttonId) {
+      case 1:
         return _normal();
-      case _View.change_color:
-        return _changeColor();
+      case 2:
+        return _changeColorSet();
     }
+    return Container();
   }
 
   Widget _normal() {
@@ -57,7 +55,7 @@ class DarkThemePageState extends ExampleMultiViewPageState<_View> {
     return container;
   }
 
-  Widget _changeColor() {
+  Widget _changeColorSet() {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       tabs.add(TabData(text: 'Tab $i'));
@@ -78,5 +76,12 @@ class DarkThemePageState extends ExampleMultiViewPageState<_View> {
     Container container = Container(child: tabbedView, color: Colors.black12);
 
     return container;
+  }
+
+  @override
+  void onButtonClick(int id) {
+    setState(() {
+      _buttonId = id;
+    });
   }
 }
