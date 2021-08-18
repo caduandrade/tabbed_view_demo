@@ -65,12 +65,13 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
       TabData(text: 'Tab 2'),
     ];
 
-    TabbedViewTheme theme = TabbedViewTheme.classic();
-    theme.tabsArea.tab.textStyle = TextStyle(fontSize: 20, color: Colors.blue);
+    TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic()
+      ..tabsArea.tab.textStyle = TextStyle(fontSize: 20, color: Colors.blue);
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 
   Widget _topAlignment() {
@@ -79,14 +80,16 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
       TabData(text: 'Tab 2'),
     ];
 
-    TabbedViewTheme theme = TabbedViewTheme.classic();
-    theme.tabsArea.tab
+    TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
+
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic();
+    themeData.tabsArea.tab
       ..textStyle = TextStyle(fontSize: 20)
       ..verticalAlignment = VerticalAlignment.top;
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 
   Widget _extraButtonOverrideColor() {

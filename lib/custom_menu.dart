@@ -43,10 +43,7 @@ class CustomMenuPageState extends ExampleMultiViewPageState<_View> {
       tabs.add(TabData(text: 'Tab $i'));
     }
 
-    TabbedViewTheme theme = TabbedViewTheme.classic();
-
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
+    TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
     return tabbedView;
   }
 
@@ -55,12 +52,15 @@ class CustomMenuPageState extends ExampleMultiViewPageState<_View> {
     for (int i = 1; i < 11; i++) {
       tabs.add(TabData(text: 'Tab $i'));
     }
+    TabbedViewController controller = TabbedViewController(tabs);
 
-    TabbedViewTheme theme = TabbedViewTheme.classic()..menu.maxWidth = 100;
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic()
+      ..menu.maxWidth = 100;
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 
   Widget _ellipsis() {
@@ -72,12 +72,14 @@ class CustomMenuPageState extends ExampleMultiViewPageState<_View> {
           text: 'The name of the tab is so long that it doesn'
               't fit on the menu')
     ];
+    TabbedViewController controller = TabbedViewController(tabs);
 
-    TabbedViewTheme theme = TabbedViewTheme.classic()
+    TabbedView tabbedView = TabbedView(controller: controller);
+
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic()
       ..menu.ellipsisOverflowText = true;
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    return theme;
   }
 }

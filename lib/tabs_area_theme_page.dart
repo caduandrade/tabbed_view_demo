@@ -31,32 +31,41 @@ class TabsAreaThemePageState extends ExampleMultiViewPageState<_View> {
     }
   }
 
-  Widget _gaps() {
+  TabbedViewController _tabbedViewController() {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       tabs.add(
           TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
     }
+    return TabbedViewController(tabs);
+  }
 
-    TabbedViewTheme theme = TabbedViewTheme.classic();
-    theme.tabsArea
+  Widget _gaps() {
+    TabbedViewController controller = _tabbedViewController();
+
+    TabbedView tabbedView = TabbedView(controller: controller);
+
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic();
+    themeData.tabsArea
       ..initialGap = 20
       ..middleGap = 5
       ..minimalFinalGap = 5;
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 
   Widget _color() {
-    var tabs = [TabData(text: 'Tab 1'), TabData(text: 'Tab 2')];
+    TabbedViewController controller = _tabbedViewController();
 
-    TabbedViewTheme theme = TabbedViewTheme.minimalist();
-    theme.tabsArea.color = Colors.green[100];
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    TabbedViewThemeData themeData = TabbedViewThemeData.minimalist();
+    themeData.tabsArea.color = Colors.green[100];
+
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 }

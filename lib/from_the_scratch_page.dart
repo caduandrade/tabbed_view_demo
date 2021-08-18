@@ -16,9 +16,11 @@ class FromTheScratchPageState extends ExamplePageState {
       TabData(text: 'Tab 2'),
       TabData(text: 'Tab 3')
     ];
+    TabbedViewController controller = TabbedViewController(tabs);
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedViewTheme theme = TabbedViewTheme();
-    theme.tabsArea
+    TabbedViewThemeData themeData = TabbedViewThemeData();
+    themeData.tabsArea
       ..border = Border(bottom: BorderSide(color: Colors.green[700]!, width: 3))
       ..middleGap = 6;
 
@@ -26,7 +28,7 @@ class FromTheScratchPageState extends ExamplePageState {
     BorderRadiusGeometry? borderRadius =
         BorderRadius.only(topLeft: radius, topRight: radius);
 
-    theme.tabsArea.tab
+    themeData.tabsArea.tab
       ..padding = EdgeInsets.fromLTRB(10, 4, 10, 4)
       ..buttonsOffset = 8
       ..decoration = BoxDecoration(
@@ -38,8 +40,7 @@ class FromTheScratchPageState extends ExamplePageState {
       ..highlightedStatus.decoration =
           BoxDecoration(color: Colors.green[50], borderRadius: borderRadius);
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+    return theme;
   }
 }

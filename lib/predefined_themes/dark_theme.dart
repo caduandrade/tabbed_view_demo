@@ -32,48 +32,39 @@ class DarkThemeExampleState extends ExampleStatefulState<DarkThemeExample> {
     return Container();
   }
 
-  Widget _normal() {
+  TabbedViewController _tabbedViewController() {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
-      tabs.add(TabData(text: 'Tab $i'));
+      tabs.add(TabData(
+          text: 'Tab $i',
+          content: Center(
+              child:
+                  Text('Content $i', style: TextStyle(color: Colors.white)))));
     }
-    TabbedViewController controller = TabbedViewController(tabs);
+    return TabbedViewController(tabs);
+  }
 
-    var contentBuilder = (BuildContext context, int index) {
-      int i = index + 1;
-      Text text = Text('Content $i', style: TextStyle(color: Colors.white));
-      return Center(child: text);
-    };
+  Widget _normal() {
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedView tabbedView = TabbedView(
-        controller: controller,
-        contentBuilder: contentBuilder,
-        theme: TabbedViewTheme.dark());
+    TabbedViewTheme theme =
+        TabbedViewTheme(child: tabbedView, data: TabbedViewThemeData.dark());
 
-    Container container = Container(child: tabbedView, color: Colors.black);
+    Container container = Container(child: theme, color: Colors.black);
 
     return container;
   }
 
   Widget _changeColorSet() {
-    List<TabData> tabs = [];
-    for (var i = 1; i < 7; i++) {
-      tabs.add(TabData(text: 'Tab $i'));
-    }
-    TabbedViewController controller = TabbedViewController(tabs);
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    var contentBuilder = (BuildContext context, int index) {
-      int i = index + 1;
-      Text text = Text('Content $i', style: TextStyle(color: Colors.white));
-      return Center(child: text);
-    };
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView,
+        data: TabbedViewThemeData.dark(colorSet: Colors.indigo));
 
-    TabbedViewTheme theme = TabbedViewTheme.dark(colorSet: Colors.indigo);
-
-    TabbedView tabbedView = TabbedView(
-        controller: controller, contentBuilder: contentBuilder, theme: theme);
-
-    Container container = Container(child: tabbedView, color: Colors.black12);
+    Container container = Container(child: theme, color: Colors.black12);
 
     return container;
   }

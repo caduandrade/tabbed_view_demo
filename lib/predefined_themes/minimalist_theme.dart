@@ -32,29 +32,32 @@ class MinimalistThemePageState
     return Container();
   }
 
-  Widget _normal() {
+  TabbedViewController _tabbedViewController() {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       tabs.add(
           TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
     }
-    TabbedViewController controller = TabbedViewController(tabs);
-    TabbedView tabbedView =
-        TabbedView(controller: controller, theme: TabbedViewTheme.minimalist());
-    return tabbedView;
+    return TabbedViewController(tabs);
+  }
+
+  Widget _normal() {
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
+
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView, data: TabbedViewThemeData.minimalist());
+    return theme;
   }
 
   Widget _changeColorSet() {
-    List<TabData> tabs = [];
-    for (var i = 1; i < 7; i++) {
-      tabs.add(
-          TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
-    }
-    TabbedViewController controller = TabbedViewController(tabs);
-    TabbedView tabbedView = TabbedView(
-        controller: controller,
-        theme: TabbedViewTheme.minimalist(colorSet: Colors.blue));
-    return tabbedView;
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
+
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView,
+        data: TabbedViewThemeData.minimalist(colorSet: Colors.blue));
+    return theme;
   }
 
   @override

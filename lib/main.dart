@@ -20,7 +20,7 @@ void main() {
       initialWidthWeight: .95,
       initialHeightWeight: .95,
       maxSize: maxSize,
-      title: 'Tabbed view (1.3.0)',
+      title: 'Tabbed view (1.4.0)',
       widgetBackground: Colors.white,
       sectionsBuilder: (menuNotifier) {
         return [

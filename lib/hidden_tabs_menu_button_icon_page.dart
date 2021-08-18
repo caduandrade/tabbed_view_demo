@@ -16,13 +16,15 @@ class HiddenTabsMenuButtonIconPageState extends ExamplePageState {
     for (var i = 1; i < 7; i++) {
       tabs.add(TabData(text: 'Tab $i'));
     }
+    TabbedViewController controller = TabbedViewController(tabs);
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedViewTheme theme = TabbedViewTheme.classic();
-    theme.tabsArea.buttonsArea.hiddenTabsMenuButtonIcon =
-        Icons.arrow_drop_down_circle_outlined;
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic()
+      ..tabsArea.buttonsArea.hiddenTabsMenuButtonIcon =
+          Icons.arrow_drop_down_circle_outlined;
 
-    TabbedView tabbedView =
-        TabbedView(controller: TabbedViewController(tabs), theme: theme);
-    return tabbedView;
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 }

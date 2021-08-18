@@ -34,32 +34,33 @@ class ClassicThemePageState extends ExampleMultiViewPageState<_View> {
     }
   }
 
-  Widget _normal() {
+  TabbedViewController _tabbedViewController() {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       tabs.add(
           TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
     }
-    TabbedViewController controller = TabbedViewController(tabs);
+    return TabbedViewController(tabs);
+  }
 
-    TabbedView tabbedView =
-        TabbedView(controller: controller, theme: TabbedViewTheme.classic());
+  Widget _normal() {
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    return tabbedView;
+    TabbedViewTheme theme =
+        TabbedViewTheme(child: tabbedView, data: TabbedViewThemeData.classic());
+
+    return theme;
   }
 
   Widget _changeColor() {
-    List<TabData> tabs = [];
-    for (var i = 1; i < 7; i++) {
-      tabs.add(
-          TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
-    }
-    TabbedViewController controller = TabbedViewController(tabs);
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedViewTheme theme = TabbedViewTheme.classic(colorSet: Colors.green);
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView,
+        data: TabbedViewThemeData.classic(colorSet: Colors.green));
 
-    TabbedView tabbedView = TabbedView(controller: controller, theme: theme);
-
-    return tabbedView;
+    return theme;
   }
 }

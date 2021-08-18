@@ -36,41 +36,43 @@ class MobileThemeExampleState extends ExampleStatefulState<MobileThemeExample> {
     return Container();
   }
 
-  Widget _normal() {
+  TabbedViewController _tabbedViewController() {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       tabs.add(
           TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
     }
-    TabbedViewController controller = TabbedViewController(tabs);
-    TabbedView tabbedView =
-        TabbedView(controller: controller, theme: TabbedViewTheme.mobile());
-    return tabbedView;
+    return TabbedViewController(tabs);
+  }
+
+  Widget _normal() {
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
+
+    TabbedViewTheme theme =
+        TabbedViewTheme(child: tabbedView, data: TabbedViewThemeData.mobile());
+    return theme;
   }
 
   Widget _changeColorSet() {
-    List<TabData> tabs = [];
-    for (var i = 1; i < 7; i++) {
-      tabs.add(
-          TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
-    }
-    TabbedViewController controller = TabbedViewController(tabs);
-    TabbedViewTheme theme = TabbedViewTheme.mobile(colorSet: Colors.blueGrey);
-    TabbedView tabbedView = TabbedView(controller: controller, theme: theme);
-    return tabbedView;
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
+
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView,
+        data: TabbedViewThemeData.mobile(colorSet: Colors.blueGrey));
+    return theme;
   }
 
   Widget _changeHighlightedTabColor() {
-    List<TabData> tabs = [];
-    for (var i = 1; i < 7; i++) {
-      tabs.add(
-          TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
-    }
-    TabbedViewController controller = TabbedViewController(tabs);
-    TabbedViewTheme theme =
-        TabbedViewTheme.mobile(highlightedTabColor: Colors.green[700]!);
-    TabbedView tabbedView = TabbedView(controller: controller, theme: theme);
-    return tabbedView;
+    TabbedViewController controller = _tabbedViewController();
+    TabbedView tabbedView = TabbedView(controller: controller);
+
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView,
+        data: TabbedViewThemeData.mobile(
+            highlightedTabColor: Colors.green[700]!));
+    return theme;
   }
 
   @override
