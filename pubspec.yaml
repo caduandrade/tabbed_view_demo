@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.4.0
+version: 1.5.0
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   multi_split_view: ^1.1.0+2
-  tabbed_view: ^1.4.0
+  tabbed_view: ^1.5.0
     #path: ../tabbed_view
   demoflu: ^0.6.1
 
@@ -50,6 +50,8 @@ flutter:
     - lib/get_started/basic.dart
     - lib/tab/custom_tab.dart
     - lib/tab/tab_selection_listener.dart
+    - lib/tab/tab_close_interceptor.dart
+    - lib/tab/tab_close_listener.dart
     - lib/tab/draggable_tab.dart
     - lib/tabs_area/tabs_area_buttons.dart
     - lib/predefined_themes/dark_theme.dart

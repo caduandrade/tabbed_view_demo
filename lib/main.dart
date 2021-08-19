@@ -4,6 +4,8 @@ import 'package:tabbed_view_demo/predefined_themes/dark_theme.dart';
 import 'package:tabbed_view_demo/predefined_themes/minimalist_theme.dart';
 import 'package:tabbed_view_demo/tab/custom_tab.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
+import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
+import 'package:tabbed_view_demo/tab/tab_close_listener.dart';
 import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
 import 'package:tabbed_view_demo/tabs_area/tabs_area_buttons.dart';
 
@@ -20,7 +22,7 @@ void main() {
       initialWidthWeight: .95,
       initialHeightWeight: .95,
       maxSize: maxSize,
-      title: 'Tabbed view (1.4.0)',
+      title: 'Tabbed view (1.5.0)',
       widgetBackground: Colors.white,
       sectionsBuilder: (menuNotifier) {
         return [
@@ -43,6 +45,14 @@ void main() {
                 name: 'Custom tab',
                 content: CustomTabExample(menuNotifier),
                 codeFile: 'lib/tab/custom_tab.dart'),
+            Example(
+                name: 'Tab close interceptor',
+                content: TabCloseInterceptorExample(),
+                codeFile: 'lib/tab/tab_close_interceptor.dart'),
+            Example(
+                name: 'Tab close listener',
+                content: TabCloseListenerExample(),
+                codeFile: 'lib/tab/tab_close_listener.dart'),
             Example(
                 name: 'Selection listener',
                 content: TabSelectionListenerExample(),

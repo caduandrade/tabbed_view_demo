@@ -1,22 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_page.dart';
-
-class TabCloseListenerPage extends StatefulWidget {
+class TabCloseInterceptorExample extends StatelessWidget {
   @override
-  TabCloseListenerPageState createState() => TabCloseListenerPageState();
-}
-
-class TabCloseListenerPageState extends ExamplePageState {
-  @override
-  Widget buildContent() {
-    bool _onTabClosing(int tabIndex) {
+  Widget build(BuildContext context) {
+    bool _tabCloseInterceptor(int tabIndex) {
       if (tabIndex == 0) {
         print('The tab $tabIndex is busy and cannot be closed.');
         return false;
       }
-      print('Closing tab $tabIndex...');
       return true;
     }
 
@@ -26,7 +18,8 @@ class TabCloseListenerPageState extends ExamplePageState {
       TabData(text: 'Tab 3')
     ];
     TabbedView tabbedView = TabbedView(
-        controller: TabbedViewController(tabs), onTabClosing: _onTabClosing);
+        controller: TabbedViewController(tabs),
+        tabCloseInterceptor: _tabCloseInterceptor);
     return tabbedView;
   }
 }
