@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   multi_split_view: ^1.1.0+2
-  tabbed_view: ^1.5.0
+  tabbed_view: ^1.6.0
     #path: ../tabbed_view
   demoflu: ^0.6.1
 
