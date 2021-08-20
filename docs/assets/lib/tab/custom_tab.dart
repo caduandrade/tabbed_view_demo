@@ -1,5 +1,4 @@
 import 'package:demoflu/demoflu.dart';
-import 'package:demoflu/src/menu/example_menu_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
@@ -17,7 +16,8 @@ class CustomTabExample extends ExampleStateful {
       MenuButton(id: 2, name: 'Extra button - override color'),
       MenuButton(id: 3, name: 'Non-closable'),
       MenuButton(id: 4, name: 'Top alignment'),
-      MenuButton(id: 5, name: 'Text style')
+      MenuButton(id: 5, name: 'Text style'),
+      MenuButton(id: 6, name: 'Menu button')
     ];
   }
 }
@@ -38,6 +38,8 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
         return _topAlignment();
       case 5:
         return _textStyle();
+      case 6:
+        return _menuButton();
     }
     return Container();
   }
@@ -100,6 +102,26 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
             icon: Icons.star,
             color: Colors.green,
             onPressed: () => print('Hello!'))
+      ])
+    ];
+    TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
+    return tabbedView;
+  }
+
+  Widget _menuButton() {
+    var tabs = [
+      TabData(text: 'Tab 1'),
+      TabData(text: 'Tab 2', buttons: [
+        TabButton(
+            icon: Icons.arrow_drop_down,
+            menuBuilder: (context) {
+              return [
+                TabbedViewMenuItem(
+                    text: 'Menu 1', onSelection: () => print('1')),
+                TabbedViewMenuItem(
+                    text: 'Menu 2', onSelection: () => print('2'))
+              ];
+            })
       ])
     ];
     TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
