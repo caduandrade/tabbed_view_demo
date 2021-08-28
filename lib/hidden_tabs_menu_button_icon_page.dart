@@ -17,11 +17,11 @@ class HiddenTabsMenuButtonIconPageState extends ExamplePageState {
       tabs.add(TabData(text: 'Tab $i'));
     }
     TabbedViewController controller = TabbedViewController(tabs);
+
     TabbedView tabbedView = TabbedView(controller: controller);
 
     TabbedViewThemeData themeData = TabbedViewThemeData.classic()
-      ..tabsArea.buttonsArea.hiddenTabsMenuButtonIcon =
-          Icons.arrow_drop_down_circle_outlined;
+      ..tabsArea.menuIconData = Icons.arrow_drop_down_circle_outlined;
 
     TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
 

@@ -22,67 +22,75 @@ void main() {
       initialWidthWeight: .95,
       initialHeightWeight: .95,
       maxSize: maxSize,
-      title: 'Tabbed view (1.6.0)',
+      title: 'Tabbed view (1.8.0)',
       widgetBackground: Colors.white,
-      sectionsBuilder: (menuNotifier) {
+      appMenuBuilder: (exampleMenuNotifier) {
         return [
-          Section(name: 'Get started', examples: [
-            Example(
-                name: 'Basic',
-                content: BasicExample(),
-                codeFile: 'lib/get_started/basic.dart'),
-            Example(
-                name: 'Content builder',
-                content: ContentBuilderExample(),
-                codeFile: 'lib/get_started/content_builder.dart'),
-            Example(
-                name: 'Close button tooltip',
-                content: CloseButtonTooltipExample(),
-                codeFile: 'lib/get_started/close_button_tooltip.dart')
-          ]),
-          Section(name: 'Tab', examples: [
-            Example(
-                name: 'Custom tab',
-                content: CustomTabExample(menuNotifier),
-                codeFile: 'lib/tab/custom_tab.dart'),
-            Example(
-                name: 'Tab close interceptor',
-                content: TabCloseInterceptorExample(),
-                codeFile: 'lib/tab/tab_close_interceptor.dart'),
-            Example(
-                name: 'Tab close listener',
-                content: TabCloseListenerExample(),
-                codeFile: 'lib/tab/tab_close_listener.dart'),
-            Example(
-                name: 'Selection listener',
-                content: TabSelectionListenerExample(),
-                codeFile: 'lib/tab/tab_selection_listener.dart',
-                consoleEnabled: true),
-            Example(
-                name: 'Draggable',
-                content: DraggableTabExample(),
-                codeFile: 'lib/tab/draggable_tab.dart')
-          ]),
-          Section(name: 'Tabs area', examples: [
-            Example(
-                name: 'Buttons',
-                content: TabsAreaButtonsExample(),
-                codeFile: 'lib/tabs_area/tabs_area_buttons.dart')
-          ]),
-          Section(name: 'Predefined themes', examples: [
-            Example(
-                name: 'Dark',
-                content: DarkThemeExample(menuNotifier),
-                codeFile: 'lib/predefined_themes/dark_theme.dart'),
-            Example(
-                name: 'Mobile',
-                content: MobileThemeExample(menuNotifier),
-                codeFile: 'lib/predefined_themes/mobile_theme.dart'),
-            Example(
-                name: 'Minimalist',
-                content: MinimalistThemeExample(menuNotifier),
-                codeFile: 'lib/predefined_themes/minimalist_theme.dart')
-          ])
+          MenuItem(name: 'Get started', italic: true),
+          MenuItem(
+              name: 'Basic',
+              example: BasicExample(),
+              codeFile: 'lib/get_started/basic.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Content builder',
+              example: ContentBuilderExample(),
+              codeFile: 'lib/get_started/content_builder.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Close button tooltip',
+              example: CloseButtonTooltipExample(),
+              codeFile: 'lib/get_started/close_button_tooltip.dart',
+              indentation: 2),
+          MenuItem(name: 'Tab', italic: true),
+          MenuItem(
+              name: 'Custom tab',
+              example: CustomTabExample(exampleMenuNotifier),
+              codeFile: 'lib/tab/custom_tab.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Tab close interceptor',
+              example: TabCloseInterceptorExample(),
+              codeFile: 'lib/tab/tab_close_interceptor.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Tab close listener',
+              example: TabCloseListenerExample(),
+              codeFile: 'lib/tab/tab_close_listener.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Selection listener',
+              example: TabSelectionListenerExample(),
+              codeFile: 'lib/tab/tab_selection_listener.dart',
+              consoleEnabled: true,
+              indentation: 2),
+          MenuItem(
+              name: 'Draggable',
+              example: DraggableTabExample(),
+              codeFile: 'lib/tab/draggable_tab.dart',
+              indentation: 2),
+          MenuItem(name: 'Tabs area', italic: true),
+          MenuItem(
+              name: 'Buttons',
+              example: TabsAreaButtonsExample(),
+              codeFile: 'lib/tabs_area/tabs_area_buttons.dart',
+              indentation: 2),
+          MenuItem(name: 'Predefined themes', italic: true),
+          MenuItem(
+              name: 'Dark',
+              example: DarkThemeExample(exampleMenuNotifier),
+              codeFile: 'lib/predefined_themes/dark_theme.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Mobile',
+              example: MobileThemeExample(exampleMenuNotifier),
+              codeFile: 'lib/predefined_themes/mobile_theme.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Minimalist',
+              example: MinimalistThemeExample(exampleMenuNotifier),
+              codeFile: 'lib/predefined_themes/minimalist_theme.dart',
+              indentation: 2)
         ];
       }));
 }

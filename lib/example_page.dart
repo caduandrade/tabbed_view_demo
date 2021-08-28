@@ -23,14 +23,12 @@ abstract class ExamplePageState extends State<StatefulWidget> {
         home: scaffold);
 
     MultiSplitView horizontal = MultiSplitView(
-        dividerThickness: 20,
         children: [_buildEmptyArea(), materialApp, _buildEmptyArea()],
         minimalWeight: .1,
         controller: _horizontalController);
 
     MultiSplitView vertical = MultiSplitView(
         axis: Axis.vertical,
-        dividerThickness: 20,
         children: [_buildEmptyArea(), horizontal, _buildEmptyArea()],
         minimalWeight: .1,
         controller: _verticalController);
@@ -40,7 +38,7 @@ abstract class ExamplePageState extends State<StatefulWidget> {
 
     Row row = Row(
         children: [Expanded(child: center), _buildExampleWidgetsContainer()]);
-    return Container(child: row, color: Colors.white);
+    return MultiSplitViewTheme(child:  Container(child: row, color: Colors.white), data: MultiSplitViewThemeData(dividerThickness: 20));
   }
 
   Widget _buildExampleWidgetsContainer() {

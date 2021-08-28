@@ -11,14 +11,14 @@ class TabsAreaButtonsExample extends StatelessWidget {
         tabsAreaButtonsBuilder: (context, tabsCount) {
           List<TabButton> buttons = [];
           buttons.add(TabButton(
-              icon: Icons.add,
+              iconData: Icons.add,
               onPressed: () {
                 int millisecond = DateTime.now().millisecondsSinceEpoch;
                 controller.addTab(TabData(text: '$millisecond'));
               }));
           if (tabsCount > 0) {
             buttons.add(TabButton(
-                icon: Icons.delete,
+                iconData: Icons.delete,
                 onPressed: () {
                   if (controller.selectedIndex != null) {
                     controller.removeTab(controller.selectedIndex!);

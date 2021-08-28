@@ -12,8 +12,8 @@ class CustomTabExample extends ExampleStateful {
   @override
   List<ExampleMenuWidget> menuWidgets() {
     return [
-      MenuButton(id: 1, name: 'Extra button'),
-      MenuButton(id: 2, name: 'Extra button - override color'),
+      MenuButton(id: 1, name: 'Adding button'),
+      MenuButton(id: 2, name: 'Adding button - override color'),
       MenuButton(id: 3, name: 'Non-closable'),
       MenuButton(id: 4, name: 'Top alignment'),
       MenuButton(id: 5, name: 'Text style'),
@@ -29,9 +29,9 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
   Widget build(BuildContext context) {
     switch (_buttonId) {
       case 1:
-        return _extraButton();
+        return _addingButton();
       case 2:
-        return _extraButtonOverrideColor();
+        return _addingButtonOverrideColor();
       case 3:
         return _nonClosable();
       case 4:
@@ -44,9 +44,9 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
     return Container();
   }
 
-  Widget _extraButton() {
+  Widget _addingButton() {
     TabData tab = TabData(text: 'Tab', buttons: [
-      TabButton(icon: Icons.star, onPressed: () => print('Hello!'))
+      TabButton(iconData: Icons.star, onPressed: () => print('Hello!'))
     ]);
     TabbedView tabbedView = TabbedView(controller: TabbedViewController([tab]));
     return tabbedView;
@@ -94,12 +94,12 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
     return theme;
   }
 
-  Widget _extraButtonOverrideColor() {
+  Widget _addingButtonOverrideColor() {
     var tabs = [
       TabData(text: 'Tab 1'),
       TabData(text: 'Tab 2', buttons: [
         TabButton(
-            icon: Icons.star,
+            iconData: Icons.star,
             color: Colors.green,
             onPressed: () => print('Hello!'))
       ])
@@ -113,7 +113,7 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
       TabData(text: 'Tab 1'),
       TabData(text: 'Tab 2', buttons: [
         TabButton(
-            icon: Icons.arrow_drop_down,
+            iconData: Icons.arrow_drop_down,
             menuBuilder: (context) {
               return [
                 TabbedViewMenuItem(
