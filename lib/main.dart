@@ -4,6 +4,8 @@ import 'package:tabbed_view_demo/tab/adding_button/icon_data.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
 import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
 import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
+import 'package:tabbed_view_demo/themes/default_themes/classic_theme.dart';
+import 'package:tabbed_view_demo/themes/default_themes/classic_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/dark_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_color_set.dart';
@@ -146,6 +148,17 @@ void main() {
               indentation: 4),
           MenuItem(name: 'Menu', italic: true, indentation: 2),
           MenuItem(name: 'Default themes', italic: true, indentation: 2),
+          MenuItem(
+              name: 'Classic',
+              example: ClassicThemeExample(),
+              codeFile: 'lib/themes/default_themes/classic_theme.dart',
+              indentation: 3),
+          MenuItem(
+              name: 'Color set',
+              example: ClassicThemeColorSetExample(),
+              codeFile:
+                  'lib/themes/default_themes/classic_theme_color_set.dart',
+              indentation: 4),
           MenuItem(
               name: 'Dark',
               example: DarkThemeExample(),
