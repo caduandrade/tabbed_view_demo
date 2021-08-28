@@ -15,7 +15,8 @@ class TabProgrammaticallyExample extends ExampleStateful {
       MenuButton(id: 1, name: 'Add tab'),
       MenuButton(id: 2, name: 'Remove tabs'),
       MenuButton(id: 3, name: 'Change the first tab text'),
-      MenuButton(id: 4, name: 'First tab non-closable')
+      MenuButton(id: 4, name: 'First tab non-closable'),
+      MenuButton(id: 5, name: 'New controller')
     ];
   }
 }
@@ -59,6 +60,12 @@ class AddTabExampleState
     }
   }
 
+  _onNewControllerInstance() {
+    setState(() {
+      _controller = TabbedViewController([]);
+    });
+  }
+
   @override
   void onButtonClick(int buttonId) {
     if (buttonId == 1) {
@@ -69,6 +76,8 @@ class AddTabExampleState
       _onChangeTabText();
     } else if (buttonId == 4) {
       _onDisableClose();
+    } else if (buttonId == 5) {
+      _onNewControllerInstance();
     }
   }
 }
