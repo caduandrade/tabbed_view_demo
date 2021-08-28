@@ -4,7 +4,8 @@ import 'package:tabbed_view_demo/tab/adding_button/icon_data.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
 import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
 import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
-import 'package:tabbed_view_demo/tab/custom_tab.dart';
+import 'package:tabbed_view_demo/themes/tab/tab_alignment.dart';
+import 'package:tabbed_view_demo/themes/tab/tab_text_style.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
 import 'package:tabbed_view_demo/tab/keep_alive.dart';
 import 'package:tabbed_view_demo/tab/non_closable_tab.dart';
@@ -107,6 +108,17 @@ void main() {
               codeFile: 'lib/tabs_area/tabs_area_buttons.dart',
               indentation: 2),
           MenuItem(name: 'Themes', italic: true),
+          MenuItem(name: 'Tab', italic: true, indentation: 2),
+          MenuItem(
+              name: 'Text style',
+              example: TabTextStyleExample(),
+              codeFile: 'lib/themes/tab/tab_text_style.dart',
+              indentation: 3),
+          MenuItem(
+              name: 'Alignment',
+              example: TabAlignmentExample(),
+              codeFile: 'lib/themes/tab/tab_alignment.dart',
+              indentation: 3),
           MenuItem(name: 'Default themes', italic: true, indentation: 2),
           MenuItem(
               name: 'Dark',

@@ -59,6 +59,8 @@ flutter:
     - lib/tab/tab_close_listener.dart
     - lib/tab/draggable_tab.dart
     - lib/tabs_area/tabs_area_buttons.dart
+    - lib/themes/tab/tab_alignment.dart
+    - lib/themes/tab/tab_text_style.dart
     - lib/themes/default_themes/dark_theme.dart
     - lib/themes/default_themes/mobile_theme.dart
     - lib/themes/default_themes/minimalist_theme.dart
