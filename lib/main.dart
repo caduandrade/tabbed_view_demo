@@ -17,6 +17,7 @@ import 'package:tabbed_view_demo/themes/default_themes/dark_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme.dart';
 import 'package:tabbed_view_demo/themes/tabs_area/tabs_area_color.dart';
+import 'package:tabbed_view_demo/themes/tabs_area/tabs_area_gaps.dart';
 import 'package:tabbed_view_demo/themes/theme_from_scratch.dart';
 
 import 'get_started/get_started.dart';
@@ -125,6 +126,11 @@ void main() {
               name: 'Color',
               example: TabsAreaColorExample(),
               codeFile: 'lib/themes/tabs_area/tabs_area_color.dart',
+              indentation: 3),
+          MenuItem(
+              name: 'Tab gaps',
+              example: TabsAreaGapsPage(),
+              codeFile: 'lib/themes/tabs_area/tabs_area_gaps.dart',
               indentation: 3),
           MenuItem(name: 'Default themes', italic: true, indentation: 2),
           MenuItem(
