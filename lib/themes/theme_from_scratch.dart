@@ -21,7 +21,7 @@ class ThemeFromScratchExample extends StatelessWidget {
     BorderRadiusGeometry? borderRadius =
         BorderRadius.only(topLeft: radius, topRight: radius);
 
-    themeData.tabsArea.tab
+    themeData.tab
       ..padding = EdgeInsets.fromLTRB(10, 4, 10, 4)
       ..buttonsOffset = 8
       ..decoration = BoxDecoration(

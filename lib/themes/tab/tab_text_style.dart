@@ -12,7 +12,7 @@ class TabTextStyleExample extends StatelessWidget {
     TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
 
     TabbedViewThemeData themeData = TabbedViewThemeData.classic()
-      ..tabsArea.tab.textStyle = TextStyle(fontSize: 20, color: Colors.blue);
+      ..tab.textStyle = TextStyle(fontSize: 20, color: Colors.blue);
     TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
 
     return theme;

@@ -13,7 +13,7 @@ class TabAlignmentExample extends StatelessWidget {
     TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
 
     TabbedViewThemeData themeData = TabbedViewThemeData.classic();
-    themeData.tabsArea.tab
+    themeData.tab
       ..textStyle = TextStyle(fontSize: 20)
       ..verticalAlignment = VerticalAlignment.top;
 
