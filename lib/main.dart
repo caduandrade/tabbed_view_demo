@@ -16,6 +16,7 @@ import 'package:tabbed_view_demo/tabs_area/tabs_area_buttons.dart';
 import 'package:tabbed_view_demo/themes/default_themes/dark_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme.dart';
+import 'package:tabbed_view_demo/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart';
 import 'package:tabbed_view_demo/themes/tabs_area/tabs_area_color.dart';
 import 'package:tabbed_view_demo/themes/tabs_area/tabs_area_gaps.dart';
 import 'package:tabbed_view_demo/themes/theme_from_scratch.dart';
@@ -132,6 +133,13 @@ void main() {
               example: TabsAreaGapsPage(),
               codeFile: 'lib/themes/tabs_area/tabs_area_gaps.dart',
               indentation: 3),
+          MenuItem(name: 'Buttons area', italic: true, indentation: 3),
+          MenuItem(
+              name: 'Menu button',
+              example: HiddenTabsMenuButtonIconExample(),
+              codeFile:
+                  'lib/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart',
+              indentation: 4),
           MenuItem(name: 'Default themes', italic: true, indentation: 2),
           MenuItem(
               name: 'Dark',
