@@ -12,7 +12,6 @@ class TabsAreaButtonsExample extends StatelessWidget {
           List<TabButton> buttons = [];
           buttons.add(TabButton(
               iconData: Icons.add,
-              iconSize: 15,
               onPressed: () {
                 int millisecond = DateTime.now().millisecondsSinceEpoch;
                 controller.addTab(TabData(text: '$millisecond'));
@@ -20,7 +19,6 @@ class TabsAreaButtonsExample extends StatelessWidget {
           if (tabsCount > 0) {
             buttons.add(TabButton(
                 iconData: Icons.delete,
-                iconSize: 15,
                 onPressed: () {
                   if (controller.selectedIndex != null) {
                     controller.removeTab(controller.selectedIndex!);
@@ -29,6 +27,12 @@ class TabsAreaButtonsExample extends StatelessWidget {
           }
           return buttons;
         });
-    return tabbedView;
+
+    // using material design icon patterns
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic()
+      ..materialDesign();
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 }

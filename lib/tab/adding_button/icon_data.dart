@@ -12,7 +12,7 @@ class IconDataExample extends StatelessWidget with SnackBarMixin {
     ]);
 
     TabbedView tabbedView = TabbedView(controller: TabbedViewController([tab]));
-    // using material design paddings, size, etc
+    // using material design icon patterns
     TabbedViewThemeData themeData = TabbedViewThemeData.classic()
       ..materialDesign();
     TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
