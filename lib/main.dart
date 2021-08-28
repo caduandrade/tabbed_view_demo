@@ -6,6 +6,7 @@ import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
 import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
 import 'package:tabbed_view_demo/tab/custom_tab.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
+import 'package:tabbed_view_demo/tab/keep_alive.dart';
 import 'package:tabbed_view_demo/tab/non_closable_tab.dart';
 import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
 import 'package:tabbed_view_demo/tab/tab_close_listener.dart';
@@ -74,17 +75,12 @@ void main() {
               codeFile: 'lib/tab/non_closable_tab.dart',
               indentation: 2),
           MenuItem(
-              name: 'Custom tab',
-              example: CustomTabExample(exampleMenuNotifier),
-              codeFile: 'lib/tab/custom_tab.dart',
-              indentation: 2),
-          MenuItem(
-              name: 'Tab close interceptor',
+              name: 'Close interceptor',
               example: TabCloseInterceptorExample(),
               codeFile: 'lib/tab/tab_close_interceptor.dart',
               indentation: 2),
           MenuItem(
-              name: 'Tab close listener',
+              name: 'Close listener',
               example: TabCloseListenerExample(),
               codeFile: 'lib/tab/tab_close_listener.dart',
               indentation: 2),
@@ -98,6 +94,11 @@ void main() {
               name: 'Draggable',
               example: DraggableTabExample(),
               codeFile: 'lib/tab/draggable_tab.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Keep alive',
+              example: KeepAliveExample(),
+              codeFile: 'lib/tab/keep_alive.dart',
               indentation: 2),
           MenuItem(name: 'Tabs area', italic: true),
           MenuItem(
