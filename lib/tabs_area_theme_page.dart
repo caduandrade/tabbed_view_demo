@@ -8,7 +8,7 @@ class TabsAreaThemePage extends StatefulWidget {
   TabsAreaThemePageState createState() => TabsAreaThemePageState();
 }
 
-enum _View { gaps, color }
+enum _View { gaps }
 
 class TabsAreaThemePageState extends ExampleMultiViewPageState<_View> {
   @override
@@ -18,7 +18,7 @@ class TabsAreaThemePageState extends ExampleMultiViewPageState<_View> {
 
   @override
   List<Widget> buildExampleWidgets() {
-    return [buttonView('Gaps', _View.gaps), buttonView('Color', _View.color)];
+    return [buttonView('Gaps', _View.gaps)];
   }
 
   @override
@@ -26,8 +26,6 @@ class TabsAreaThemePageState extends ExampleMultiViewPageState<_View> {
     switch (currentView) {
       case _View.gaps:
         return _gaps();
-      case _View.color:
-        return _color();
     }
   }
 
@@ -56,16 +54,4 @@ class TabsAreaThemePageState extends ExampleMultiViewPageState<_View> {
     return theme;
   }
 
-  Widget _color() {
-    TabbedViewController controller = _tabbedViewController();
-
-    TabbedView tabbedView = TabbedView(controller: controller);
-
-    TabbedViewThemeData themeData = TabbedViewThemeData.minimalist();
-    themeData.tabsArea.color = Colors.green[100];
-
-    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
-
-    return theme;
-  }
 }
