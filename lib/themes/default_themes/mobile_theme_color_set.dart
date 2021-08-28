@@ -3,7 +3,7 @@ import 'package:demoflu/src/menu/example_menu_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class MobileThemeExample extends StatelessWidget {
+class MobileThemeColorSetExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<TabData> tabs = [];
@@ -15,8 +15,9 @@ class MobileThemeExample extends StatelessWidget {
 
     TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedViewTheme theme =
-        TabbedViewTheme(child: tabbedView, data: TabbedViewThemeData.mobile());
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView,
+        data: TabbedViewThemeData.mobile(colorSet: Colors.blueGrey));
     return theme;
   }
 }

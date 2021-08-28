@@ -5,6 +5,8 @@ import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
 import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
 import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
 import 'package:tabbed_view_demo/themes/default_themes/dark_theme_color_set.dart';
+import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_color_set.dart';
+import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_highlight_color.dart';
 import 'package:tabbed_view_demo/themes/tab/tab_alignment.dart';
 import 'package:tabbed_view_demo/themes/tab/tab_text_style.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
@@ -155,9 +157,19 @@ void main() {
               indentation: 4),
           MenuItem(
               name: 'Mobile',
-              example: MobileThemeExample(exampleMenuNotifier),
+              example: MobileThemeExample(),
               codeFile: 'lib/themes/default_themes/mobile_theme.dart',
               indentation: 3),
+          MenuItem(
+              name: 'Color set',
+              example: MobileThemeColorSetExample(),
+              codeFile: 'lib/themes/default_themes/mobile_theme_color_set.dart',
+              indentation: 4),
+          MenuItem(
+              name: 'Highlight color',
+              example: MobileThemeHighlightColorExample(),
+              codeFile: 'lib/themes/default_themes/mobile_theme_highlight_color.dart',
+              indentation: 4),
           MenuItem(
               name: 'Minimalist',
               example: MinimalistThemeExample(exampleMenuNotifier),
