@@ -54,7 +54,7 @@ flutter:
     - lib/tab/non_closable_tab.dart
     - lib/tab/adding_button/menu_button.dart
     - lib/tab/keep_alive.dart
-    - lib/tab/add_tab_programmatically.dart
+    - lib/tab/tab_programmatically.dart
     - lib/tab/tab_selection_listener.dart
     - lib/tab/tab_close_interceptor.dart
     - lib/tab/tab_close_listener.dart
