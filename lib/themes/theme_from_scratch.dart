@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-import 'example_page.dart';
+class ThemeFromScratchExample extends StatelessWidget {
 
-class FromTheScratchPage extends StatefulWidget {
   @override
-  FromTheScratchPageState createState() => FromTheScratchPageState();
-}
+  Widget build(BuildContext context) {
 
-class FromTheScratchPageState extends ExamplePageState {
-  @override
-  Widget buildContent() {
     var tabs = [
       TabData(text: 'Tab 1'),
       TabData(text: 'Tab 2'),

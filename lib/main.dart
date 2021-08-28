@@ -1,18 +1,19 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
-import 'package:tabbed_view_demo/predefined_themes/dark_theme.dart';
-import 'package:tabbed_view_demo/predefined_themes/minimalist_theme.dart';
 import 'package:tabbed_view_demo/tab/custom_tab.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
 import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
 import 'package:tabbed_view_demo/tab/tab_close_listener.dart';
 import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
 import 'package:tabbed_view_demo/tabs_area/tabs_area_buttons.dart';
+import 'package:tabbed_view_demo/themes/default_themes/dark_theme.dart';
+import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme.dart';
+import 'package:tabbed_view_demo/themes/default_themes/mobile_theme.dart';
+import 'package:tabbed_view_demo/themes/theme_from_scratch.dart';
 
-import 'get_started/basic.dart';
+import 'get_started/get_started.dart';
 import 'get_started/close_button_tooltip.dart';
 import 'get_started/content_builder.dart';
-import 'predefined_themes/mobile_theme.dart';
 
 void main() {
   Size? maxSize;
@@ -26,12 +27,9 @@ void main() {
       widgetBackground: Colors.white,
       appMenuBuilder: (exampleMenuNotifier) {
         return [
-          MenuItem(name: 'Get started', italic: true),
-          MenuItem(
-              name: 'Basic',
-              example: BasicExample(),
-              codeFile: 'lib/get_started/basic.dart',
-              indentation: 2),
+          MenuItem(name: 'Get started',
+              example: GetStartedExample(),
+              codeFile: 'lib/get_started/get_started.dart'),
           MenuItem(
               name: 'Content builder',
               example: ContentBuilderExample(),
@@ -75,22 +73,30 @@ void main() {
               example: TabsAreaButtonsExample(),
               codeFile: 'lib/tabs_area/tabs_area_buttons.dart',
               indentation: 2),
-          MenuItem(name: 'Predefined themes', italic: true),
+          MenuItem(name: 'Themes', italic: true),
+          MenuItem(name: 'Default themes', italic: true, indentation: 2),
           MenuItem(
               name: 'Dark',
               example: DarkThemeExample(exampleMenuNotifier),
-              codeFile: 'lib/predefined_themes/dark_theme.dart',
-              indentation: 2),
+              codeFile: 'lib/themes/default_themes/dark_theme.dart',
+              indentation: 3),
           MenuItem(
               name: 'Mobile',
               example: MobileThemeExample(exampleMenuNotifier),
-              codeFile: 'lib/predefined_themes/mobile_theme.dart',
-              indentation: 2),
+              codeFile: 'lib/themes/default_themes/mobile_theme.dart',
+              indentation: 3),
           MenuItem(
               name: 'Minimalist',
               example: MinimalistThemeExample(exampleMenuNotifier),
-              codeFile: 'lib/predefined_themes/minimalist_theme.dart',
+              codeFile: 'lib/themes/default_themes/minimalist_theme.dart',
+              indentation: 3),
+          MenuItem(
+              name: 'New theme',
+              example: ThemeFromScratchExample(),
+              codeFile: 'lib/themes/theme_from_scratch.dart',
               indentation: 2)
+
+
         ];
       }));
 }

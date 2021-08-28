@@ -47,16 +47,17 @@ flutter:
   assets:
     - lib/get_started/content_builder.dart
     - lib/get_started/close_button_tooltip.dart
-    - lib/get_started/basic.dart
+    - lib/get_started/get_started.dart
     - lib/tab/custom_tab.dart
     - lib/tab/tab_selection_listener.dart
     - lib/tab/tab_close_interceptor.dart
     - lib/tab/tab_close_listener.dart
     - lib/tab/draggable_tab.dart
     - lib/tabs_area/tabs_area_buttons.dart
-    - lib/predefined_themes/dark_theme.dart
-    - lib/predefined_themes/mobile_theme.dart
-    - lib/predefined_themes/minimalist_theme.dart
+    - lib/themes/default_themes/dark_theme.dart
+    - lib/themes/default_themes/mobile_theme.dart
+    - lib/themes/default_themes/minimalist_theme.dart
+    - lib/themes/theme_from_scratch.dart
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

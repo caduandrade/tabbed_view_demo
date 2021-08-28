@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class BasicExample extends StatelessWidget {
+class GetStartedExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<TabData> tabs = [];
