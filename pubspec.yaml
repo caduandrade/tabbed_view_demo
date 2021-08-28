@@ -26,7 +26,7 @@ dependencies:
   multi_split_view: ^1.1.0+2
   tabbed_view: #^1.8.0
     path: ../tabbed_view
-  demoflu: ^0.7.2
+  demoflu: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +65,7 @@ flutter:
     - lib/themes/tabs_area/tabs_area_gaps.dart
     - lib/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart
     - lib/themes/default_themes/dark_theme.dart
+    - lib/themes/default_themes/dark_theme_color_set.dart
     - lib/themes/default_themes/mobile_theme.dart
     - lib/themes/default_themes/minimalist_theme.dart
     - lib/themes/theme_from_scratch.dart

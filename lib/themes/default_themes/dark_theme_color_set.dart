@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class DarkThemeExample extends StatelessWidget {
+class DarkThemeColorSetExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<TabData> tabs = [];
@@ -16,8 +16,9 @@ class DarkThemeExample extends StatelessWidget {
 
     TabbedView tabbedView = TabbedView(controller: controller);
 
-    TabbedViewTheme theme =
-        TabbedViewTheme(child: tabbedView, data: TabbedViewThemeData.dark());
+    TabbedViewTheme theme = TabbedViewTheme(
+        child: tabbedView,
+        data: TabbedViewThemeData.dark(colorSet: Colors.indigo));
 
     Container container = Container(child: theme, color: Colors.black);
 
