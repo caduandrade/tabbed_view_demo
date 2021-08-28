@@ -1,5 +1,6 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
+import 'package:tabbed_view_demo/tab/add_tab_programmatically.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_data.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
 import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
@@ -109,6 +110,11 @@ void main() {
               name: 'Keep alive',
               example: KeepAliveExample(),
               codeFile: 'lib/tab/keep_alive.dart',
+              indentation: 2),
+          MenuItem(
+              name: 'Adding/removing programmatically',
+              example: AddTabExample(exampleMenuNotifier),
+              codeFile: 'lib/tab/add_tab_programmatically.dart',
               indentation: 2),
           MenuItem(name: 'Tabs area', italic: true),
           MenuItem(
