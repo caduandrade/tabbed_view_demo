@@ -95,6 +95,7 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
     return theme;
   }
 
+  @deprecated
   Widget _addingButtonOverrideColor() {
     var tabs = [
       TabData(text: 'Tab 1'),

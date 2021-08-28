@@ -2,6 +2,8 @@ import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_data.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
+import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
+import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
 import 'package:tabbed_view_demo/tab/custom_tab.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
 import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
@@ -55,6 +57,17 @@ void main() {
               example: IconPathExample(),
               codeFile: 'lib/tab/adding_button/icon_path.dart',
               indentation: 3),
+          MenuItem(
+              name: 'Override theme color',
+              example: OverrideThemeColorExample(),
+              codeFile: 'lib/tab/adding_button/override_theme_color.dart',
+              indentation: 3),
+          MenuItem(
+              name: 'Menu button',
+              example: MenuButtonExample(),
+              codeFile: 'lib/tab/adding_button/menu_button.dart',
+              indentation: 3),
+
           MenuItem(
               name: 'Custom tab',
               example: CustomTabExample(exampleMenuNotifier),
