@@ -70,6 +70,7 @@ flutter:
     - lib/themes/default_themes/mobile_theme_color_set.dart
     - lib/themes/default_themes/mobile_theme_highlight_color.dart
     - lib/themes/default_themes/minimalist_theme.dart
+    - lib/themes/default_themes/minimalist_theme_color_set.dart
     - lib/themes/theme_from_scratch.dart
 
   # An image asset can refer to one or more resolution-specific "variants", see

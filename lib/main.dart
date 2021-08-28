@@ -5,6 +5,7 @@ import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
 import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
 import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
 import 'package:tabbed_view_demo/themes/default_themes/dark_theme_color_set.dart';
+import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_highlight_color.dart';
 import 'package:tabbed_view_demo/themes/tab/tab_alignment.dart';
@@ -168,13 +169,20 @@ void main() {
           MenuItem(
               name: 'Highlight color',
               example: MobileThemeHighlightColorExample(),
-              codeFile: 'lib/themes/default_themes/mobile_theme_highlight_color.dart',
+              codeFile:
+                  'lib/themes/default_themes/mobile_theme_highlight_color.dart',
               indentation: 4),
           MenuItem(
               name: 'Minimalist',
-              example: MinimalistThemeExample(exampleMenuNotifier),
+              example: MinimalistThemeExample(),
               codeFile: 'lib/themes/default_themes/minimalist_theme.dart',
               indentation: 3),
+          MenuItem(
+              name: 'Color set',
+              example: MinimalistThemeColorSetExample(),
+              codeFile:
+                  'lib/themes/default_themes/minimalist_theme_color_set.dart',
+              indentation: 4),
           MenuItem(
               name: 'New theme',
               example: ThemeFromScratchExample(),

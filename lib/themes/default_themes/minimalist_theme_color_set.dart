@@ -1,7 +1,8 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class MinimalistThemeExample extends StatelessWidget {
+class MinimalistThemeColorSetExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<TabData> tabs = [];
@@ -14,7 +15,8 @@ class MinimalistThemeExample extends StatelessWidget {
     TabbedView tabbedView = TabbedView(controller: controller);
 
     TabbedViewTheme theme = TabbedViewTheme(
-        child: tabbedView, data: TabbedViewThemeData.minimalist());
+        child: tabbedView,
+        data: TabbedViewThemeData.minimalist(colorSet: Colors.blue));
     return theme;
   }
 }
