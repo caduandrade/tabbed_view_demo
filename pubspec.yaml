@@ -51,6 +51,7 @@ flutter:
     - lib/tab/adding_button/icon_data.dart
     - lib/tab/adding_button/icon_path.dart
     - lib/tab/adding_button/override_theme_color.dart
+    - lib/tab/non_closable_tab.dart
     - lib/tab/adding_button/menu_button.dart
     - lib/tab/custom_tab.dart
     - lib/tab/tab_selection_listener.dart

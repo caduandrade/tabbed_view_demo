@@ -6,6 +6,7 @@ import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
 import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
 import 'package:tabbed_view_demo/tab/custom_tab.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
+import 'package:tabbed_view_demo/tab/non_closable_tab.dart';
 import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
 import 'package:tabbed_view_demo/tab/tab_close_listener.dart';
 import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
@@ -67,7 +68,11 @@ void main() {
               example: MenuButtonExample(),
               codeFile: 'lib/tab/adding_button/menu_button.dart',
               indentation: 3),
-
+          MenuItem(
+              name: 'Non-closable tab',
+              example: NonClosableExample(),
+              codeFile: 'lib/tab/non_closable_tab.dart',
+              indentation: 2),
           MenuItem(
               name: 'Custom tab',
               example: CustomTabExample(exampleMenuNotifier),
