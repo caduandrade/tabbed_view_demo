@@ -8,10 +8,15 @@ class IconDataExample extends StatelessWidget with SnackBarMixin {
     TabData tab = TabData(text: 'Tab', buttons: [
       TabButton(
           iconData: Icons.star,
-          iconSize: 16,
           onPressed: () => showSnackBar(context: context, msg: 'Hello!'))
     ]);
+
     TabbedView tabbedView = TabbedView(controller: TabbedViewController([tab]));
-    return tabbedView;
+    // using material design paddings, size, etc
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic()
+      ..materialDesign();
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 }
