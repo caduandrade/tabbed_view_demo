@@ -10,12 +10,17 @@ class OverrideThemeColorExample extends StatelessWidget with SnackBarMixin {
       TabData(text: 'Tab', buttons: [
         TabButton(
             iconData: Icons.star,
-            iconSize: 16,
             color: Colors.green,
             onPressed: () => showSnackBar(context: context, msg: 'Hello!'))
       ])
     ];
     TabbedView tabbedView = TabbedView(controller: TabbedViewController(tabs));
-    return tabbedView;
+
+    // using material design icon patterns
+    TabbedViewThemeData themeData = TabbedViewThemeData.classic()
+      ..materialDesign();
+    TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
+
+    return theme;
   }
 }
