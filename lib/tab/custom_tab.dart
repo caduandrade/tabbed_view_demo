@@ -44,6 +44,7 @@ class CustomTabExampleState extends ExampleStatefulState<CustomTabExample> {
     return Container();
   }
 
+  @deprecated
   Widget _addingButton() {
     TabData tab = TabData(text: 'Tab', buttons: [
       TabButton(iconData: Icons.star, onPressed: () => print('Hello!'))

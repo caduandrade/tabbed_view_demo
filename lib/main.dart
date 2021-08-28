@@ -1,5 +1,7 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
+import 'package:tabbed_view_demo/tab/adding_button/icon_data.dart';
+import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
 import 'package:tabbed_view_demo/tab/custom_tab.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
 import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
@@ -27,7 +29,8 @@ void main() {
       widgetBackground: Colors.white,
       appMenuBuilder: (exampleMenuNotifier) {
         return [
-          MenuItem(name: 'Get started',
+          MenuItem(
+              name: 'Get started',
               example: GetStartedExample(),
               codeFile: 'lib/get_started/get_started.dart'),
           MenuItem(
@@ -41,6 +44,17 @@ void main() {
               codeFile: 'lib/get_started/close_button_tooltip.dart',
               indentation: 2),
           MenuItem(name: 'Tab', italic: true),
+          MenuItem(name: 'Adding button', italic: true, indentation: 2),
+          MenuItem(
+              name: 'Icon data',
+              example: IconDataExample(),
+              codeFile: 'lib/tab/adding_button/icon_data.dart',
+              indentation: 3),
+          MenuItem(
+              name: 'Icon path',
+              example: IconPathExample(),
+              codeFile: 'lib/tab/adding_button/icon_path.dart',
+              indentation: 3),
           MenuItem(
               name: 'Custom tab',
               example: CustomTabExample(exampleMenuNotifier),
@@ -95,8 +109,6 @@ void main() {
               example: ThemeFromScratchExample(),
               codeFile: 'lib/themes/theme_from_scratch.dart',
               indentation: 2)
-
-
         ];
       }));
 }

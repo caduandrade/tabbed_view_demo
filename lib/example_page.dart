@@ -38,7 +38,9 @@ abstract class ExamplePageState extends State<StatefulWidget> {
 
     Row row = Row(
         children: [Expanded(child: center), _buildExampleWidgetsContainer()]);
-    return MultiSplitViewTheme(child:  Container(child: row, color: Colors.white), data: MultiSplitViewThemeData(dividerThickness: 20));
+    return MultiSplitViewTheme(
+        child: Container(child: row, color: Colors.white),
+        data: MultiSplitViewThemeData(dividerThickness: 20));
   }
 
   Widget _buildExampleWidgetsContainer() {
