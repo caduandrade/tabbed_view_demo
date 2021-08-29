@@ -65,6 +65,8 @@ flutter:
     - lib/themes/tabs_area/tabs_area_color.dart
     - lib/themes/tabs_area/tabs_area_gaps.dart
     - lib/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart
+    - lib/themes/menu/menu_max_width.dart
+    - lib/themes/menu/menu_ellipsis.dart
     - lib/themes/default_themes/classic_theme.dart
     - lib/themes/default_themes/classic_theme_color_set.dart
     - lib/themes/default_themes/dark_theme.dart

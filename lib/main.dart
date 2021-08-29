@@ -11,6 +11,8 @@ import 'package:tabbed_view_demo/themes/default_themes/dark_theme_color_set.dart
 import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_highlight_color.dart';
+import 'package:tabbed_view_demo/themes/menu/menu_ellipsis.dart';
+import 'package:tabbed_view_demo/themes/menu/menu_max_width.dart';
 import 'package:tabbed_view_demo/themes/tab/tab_alignment.dart';
 import 'package:tabbed_view_demo/themes/tab/tab_text_style.dart';
 import 'package:tabbed_view_demo/tab/draggable_tab.dart';
@@ -153,6 +155,18 @@ void main() {
                   'lib/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart',
               indentation: 4),
           MenuItem(name: 'Menu', italic: true, indentation: 2),
+          MenuItem(
+              name: 'Max width',
+              example: MenuMaxWidthExample(),
+              codeFile:
+              'lib/themes/menu/menu_max_width.dart',
+              indentation: 3),
+          MenuItem(
+              name: 'Ellipsis on text overflow',
+              example: MenuEllipsisExample(),
+              codeFile:
+              'lib/themes/menu/menu_ellipsis.dart',
+              indentation: 3),
           MenuItem(name: 'Default themes', italic: true, indentation: 2),
           MenuItem(
               name: 'Classic',
@@ -203,7 +217,7 @@ void main() {
                   'lib/themes/default_themes/minimalist_theme_color_set.dart',
               indentation: 4),
           MenuItem(
-              name: 'New theme',
+              name: 'Theme from scratch',
               example: ThemeFromScratchExample(),
               codeFile: 'lib/themes/theme_from_scratch.dart',
               indentation: 2)
