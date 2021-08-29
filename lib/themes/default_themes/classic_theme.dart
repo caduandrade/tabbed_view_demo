@@ -6,11 +6,8 @@ class ClassicThemeExample extends StatelessWidget {
   Widget build(BuildContext context) {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
-      tabs.add(TabData(
-          text: 'Tab $i',
-          content: Center(
-              child:
-                  Text('Content $i', style: TextStyle(color: Colors.white)))));
+      tabs.add(
+          TabData(text: 'Tab $i', content: Center(child: Text('Content $i'))));
     }
     TabbedViewController controller = TabbedViewController(tabs);
 
