@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
 class MenuEllipsisExample extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     var tabs = [
@@ -23,6 +22,4 @@ class MenuEllipsisExample extends StatelessWidget {
 
     return theme;
   }
-
-
 }

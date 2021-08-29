@@ -7,7 +7,7 @@ class IconPathExample extends StatelessWidget with SnackBarMixin {
   Widget build(BuildContext context) {
     TabData tab = TabData(text: 'Tab', buttons: [
       TabButton(
-          iconPath: _path,
+          icon: IconProvider.path(_path),
           onPressed: () => showSnackBar(context: context, msg: 'Hello!'))
     ]);
     TabbedView tabbedView = TabbedView(controller: TabbedViewController([tab]));

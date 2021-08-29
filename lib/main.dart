@@ -42,7 +42,7 @@ void main() {
       initialWidthWeight: .95,
       initialHeightWeight: .95,
       maxSize: maxSize,
-      title: 'Tabbed view (1.8.0)',
+      title: 'Tabbed view (1.9.0)',
       widgetBackground: Colors.white,
       appMenuBuilder: (exampleMenuNotifier) {
         return [
@@ -158,14 +158,12 @@ void main() {
           MenuItem(
               name: 'Max width',
               example: MenuMaxWidthExample(),
-              codeFile:
-              'lib/themes/menu/menu_max_width.dart',
+              codeFile: 'lib/themes/menu/menu_max_width.dart',
               indentation: 3),
           MenuItem(
               name: 'Ellipsis on text overflow',
               example: MenuEllipsisExample(),
-              codeFile:
-              'lib/themes/menu/menu_ellipsis.dart',
+              codeFile: 'lib/themes/menu/menu_ellipsis.dart',
               indentation: 3),
           MenuItem(name: 'Default themes', italic: true, indentation: 2),
           MenuItem(

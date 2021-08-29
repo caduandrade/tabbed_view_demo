@@ -9,7 +9,7 @@ class MenuButtonExample extends StatelessWidget with SnackBarMixin {
     var tabs = [
       TabData(text: 'Tab', buttons: [
         TabButton(
-            iconPath: TabbedViewIcons.menu,
+            icon: IconProvider.path(TabbedViewIcons.menu),
             menuBuilder: (context) {
               return [
                 TabbedViewMenuItem(

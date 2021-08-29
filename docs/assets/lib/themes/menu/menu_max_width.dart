@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
 class MenuMaxWidthExample extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     List<TabData> tabs = [];
@@ -19,5 +18,4 @@ class MenuMaxWidthExample extends StatelessWidget {
 
     return theme;
   }
-
 }

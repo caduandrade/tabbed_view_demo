@@ -13,8 +13,8 @@ class HiddenTabsMenuButtonIconExample extends StatelessWidget {
     TabbedView tabbedView = TabbedView(controller: controller);
 
     TabbedViewThemeData themeData = TabbedViewThemeData.classic()
-      ..materialDesign()
-      ..tabsArea.menuIconData = Icons.arrow_drop_down_circle_outlined;
+      ..tabsArea.menuIcon =
+          IconProvider.data(Icons.arrow_drop_down_circle_outlined);
 
     TabbedViewTheme theme = TabbedViewTheme(child: tabbedView, data: themeData);
 
