@@ -36,13 +36,13 @@ import 'get_started/content_builder.dart';
 
 void main() {
   Size? maxSize;
-  // maxSize = Size(400, 300);
+  // maxSize = Size(500, 300);
   runApp(DemoFluApp(
       resizable: true,
       initialWidthWeight: .95,
       initialHeightWeight: .95,
       maxSize: maxSize,
-      title: 'Tabbed view (1.9.0)',
+      title: 'Tabbed view (1.10.0)',
       widgetBackground: Colors.white,
       appMenuBuilder: (exampleMenuNotifier) {
         return [

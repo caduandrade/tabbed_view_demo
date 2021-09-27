@@ -15,8 +15,7 @@ class MobileThemeHighlightColorExample extends StatelessWidget {
 
     TabbedViewTheme theme = TabbedViewTheme(
         child: tabbedView,
-        data: TabbedViewThemeData.mobile(
-            highlightedTabColor: Colors.green[700]!));
+        data: TabbedViewThemeData.mobile(accentColor: Colors.green[700]!));
     return theme;
   }
 }
