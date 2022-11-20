@@ -1,9 +1,10 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class TabsAreaGapsPage extends StatelessWidget {
+class TabsAreaGapsPage extends Example {
   @override
-  Widget build(BuildContext context) {
+  Widget buildMainWidget(BuildContext context) {
     List<TabData> tabs = [
       TabData(text: 'Tab 1'),
       TabData(text: 'Tab 2'),

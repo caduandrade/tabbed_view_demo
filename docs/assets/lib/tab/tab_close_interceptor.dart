@@ -1,12 +1,14 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class TabCloseInterceptorExample extends StatelessWidget {
+class TabCloseInterceptorExample extends Example {
   @override
-  Widget build(BuildContext context) {
+  Widget buildMainWidget(BuildContext context) {
     bool _tabCloseInterceptor(int tabIndex) {
       if (tabIndex == 0) {
-        print('The tab $tabIndex is busy and cannot be closed.');
+        DemoFlu.printOnConsole(
+            context, 'The tab $tabIndex is busy and cannot be closed.');
         return false;
       }
       return true;

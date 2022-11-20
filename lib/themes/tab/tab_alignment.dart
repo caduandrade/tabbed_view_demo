@@ -2,9 +2,9 @@ import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class TabAlignmentExample extends StatelessWidget {
+class TabAlignmentExample extends Example {
   @override
-  Widget build(BuildContext context) {
+  Widget buildMainWidget(BuildContext context) {
     var tabs = [
       TabData(text: 'Tab 1'),
       TabData(text: 'Tab 2'),

@@ -3,60 +3,64 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "main.dart.js": "8b67e3a15f4654c2cb8a4405e420e803",
-"version.json": "37fd061da5843dfc7398d6d5fe0ab3a8",
-"assets/lib/get_started/content_builder.dart": "dc875f00f7fd874233573a7d5164ce2b",
-"assets/lib/get_started/close_button_tooltip.dart": "129253b5d1b6af5860f85b7efceb955b",
-"assets/lib/get_started/get_started.dart": "37382dafacb44c53ebf0319f47ab0028",
-"assets/lib/tab/adding_button/icon_data.dart": "de815d03339bcc7bcaf791b49576a3ab",
-"assets/lib/tab/adding_button/icon_path.dart": "e1039d571c621e519f998445812dd581",
-"assets/lib/tab/adding_button/override_theme_color.dart": "d17c3550f38b8dbfbae60fba4b33e217",
-"assets/lib/tab/adding_button/menu_button.dart": "b637da06cba94e92cabc600922745084",
-"assets/lib/tab/non_closable_tab.dart": "63d5e586f367e482b89f1b592e8a4054",
-"assets/lib/tab/keep_alive.dart": "c9e5ead548573a64e11f5f8015829f57",
-"assets/lib/tab/tab_programmatically.dart": "7d81280e735ab761e32062891abb0739",
-"assets/lib/tab/tab_selection_listener.dart": "c1e1ee651ae679a41c6600b31000d39b",
-"assets/lib/tab/tab_close_interceptor.dart": "5a71ecd75c8f6d7c2f14bdfd81c3b905",
-"assets/lib/tab/tab_close_listener.dart": "0e6167e850ff8a970875ea12be22d604",
-"assets/lib/tab/draggable_tab.dart": "02e278d0ce15450574279d308b1ed0ac",
-"assets/lib/tabs_area/tabs_area_buttons.dart": "135774bdae1d531dd701d05529fd154c",
-"assets/lib/themes/tab/tab_alignment.dart": "96e455c1043cc359e19a868e9ac60480",
-"assets/lib/themes/tab/tab_text_style.dart": "583c2c4fcb568488b24dc3b76da963ca",
-"assets/lib/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart": "1cabedc6de317b61d5e00bb221b8eae6",
-"assets/lib/themes/tabs_area/tabs_area_color.dart": "3a7ab9ba5813a1209646b4ebd225cd84",
-"assets/lib/themes/tabs_area/tabs_area_gaps.dart": "5ef016a1ce3c6295f49d2da9cc217475",
-"assets/lib/themes/menu/menu_max_width.dart": "8ed4e51a47e8c3e609dbd65c095b3295",
-"assets/lib/themes/menu/menu_ellipsis.dart": "acaf9be8f6c5f52e4f34cc9b3c4d069c",
-"assets/lib/themes/default_themes/classic_theme.dart": "d55f175009f428509622c6742ede80ac",
-"assets/lib/themes/default_themes/classic_theme_color_set.dart": "1f475faf680df5c43318f2434fb2a678",
-"assets/lib/themes/default_themes/dark_theme.dart": "9e25b2a405a91fd1cf04e01323fee5ec",
-"assets/lib/themes/default_themes/dark_theme_color_set.dart": "5fc0d3625e3d184e78b8047e3eb91df0",
-"assets/lib/themes/default_themes/mobile_theme.dart": "0ea47702eb8355f2911cdaf22844f14b",
-"assets/lib/themes/default_themes/mobile_theme_color_set.dart": "52f73eabba9e5b4a286698e18f53df05",
-"assets/lib/themes/default_themes/mobile_theme_highlight_color.dart": "10c975db7d94d93d525387409a0aaf24",
-"assets/lib/themes/default_themes/minimalist_theme.dart": "29bd1ade9592ed1ac1335a569ff39d93",
-"assets/lib/themes/default_themes/minimalist_theme_color_set.dart": "2048f55b1a735de45b2b6256a3454690",
-"assets/lib/themes/theme_from_scratch.dart": "e1cf49ab23d4322f180d8bcf93ebecc5",
+  "canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
+"canvaskit/canvaskit.wasm": "bf50631470eb967688cca13ee181af62",
+"canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
+"canvaskit/profiling/canvaskit.wasm": "95a45378b69e77af5ed2bc72b2209b94",
+"flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
+"main.dart.js": "7155a2f752ce30cda9e008b6fad8af39",
+"version.json": "a1d8fdb0bb9a4ea6fd1c44e6c490be3d",
+"assets/lib/get_started/content_builder.dart": "3f027e69f01a4c5a46160e509b74aa2d",
+"assets/lib/get_started/close_button_tooltip.dart": "272a45fe3d3b298f312b8ced15d3a897",
+"assets/lib/get_started/get_started.dart": "bd0062fad19ceb77a9c227b7bbd5287d",
+"assets/lib/tab/adding_button/icon_data.dart": "3663ce87404ba974c293c5f4572022e0",
+"assets/lib/tab/adding_button/icon_path.dart": "4c3b0f704b76b87ab8217f0d696f372c",
+"assets/lib/tab/adding_button/override_theme_color.dart": "21bea07ab5dd91546927bfcf01a0ccd6",
+"assets/lib/tab/adding_button/menu_button.dart": "fa16f7ddd37df8f61f71cd9128d10d24",
+"assets/lib/tab/non_closable_tab.dart": "bc6ca97cdd3dc29e9643acd66d2a4f50",
+"assets/lib/tab/tab_programmatically.dart": "4724c9ad2174399ca83117d5dec8e21f",
+"assets/lib/tab/keep_alive.dart": "3d93192f81cc9be46966ea27feca6a10",
+"assets/lib/tab/tab_selection_listener.dart": "dec3961977dfe86f7a45093b7372b9d5",
+"assets/lib/tab/tab_close_interceptor.dart": "c7a920dff7e90fac79b3e32d55d121eb",
+"assets/lib/tab/tab_close_listener.dart": "f74d8a0ce5049e3edfb4410e75d004e3",
+"assets/lib/tab/draggable_tab.dart": "9f0cc6d245a5e77800150551b4dcfeb2",
+"assets/lib/tabs_area/tabs_area_buttons.dart": "37c5daa7cd00676014ede6fbf76b66ab",
+"assets/lib/themes/tab/tab_alignment.dart": "75b7973acbf94c49c37d365473314ada",
+"assets/lib/themes/tab/tab_text_style.dart": "7bd838dc4491a210d14aff79abe920aa",
+"assets/lib/themes/tabs_area/tabs_area_color.dart": "6073e1b4a23e515791bf8edda14ea959",
+"assets/lib/themes/tabs_area/tabs_area_gaps.dart": "1c609df3a967cbe8d2e6d389e752d717",
+"assets/lib/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart": "f1ee67f46011b9e0f574a4bc0e3f9006",
+"assets/lib/themes/menu/menu_max_width.dart": "207330e17b73e9ea98b7d72001319e88",
+"assets/lib/themes/menu/menu_ellipsis.dart": "b6e5d462e149127b0173d9032d372407",
+"assets/lib/themes/default_themes/classic_theme.dart": "55889462a0f716e3560fbc019c43378c",
+"assets/lib/themes/default_themes/classic_theme_color_set.dart": "51bd917d12b82f9d85e19f742bb2fd82",
+"assets/lib/themes/default_themes/dark_theme.dart": "110e7a5b1ced2f1653ea785e3822ac81",
+"assets/lib/themes/default_themes/dark_theme_color_set.dart": "2f76a0c5304f44664ef28f2f93bf5997",
+"assets/lib/themes/default_themes/mobile_theme.dart": "24841d756a0c041a152c911aa916d13b",
+"assets/lib/themes/default_themes/mobile_theme_color_set.dart": "341ceee4e4424e2e429fc2719b905981",
+"assets/lib/themes/default_themes/mobile_theme_highlight_color.dart": "2e7c1353adda17539317adf5afc793b2",
+"assets/lib/themes/default_themes/minimalist_theme.dart": "561b34f282edf321b87459a2c3a8eaf5",
+"assets/lib/themes/default_themes/minimalist_theme_color_set.dart": "8f74a30f9138cfbbeebc5041599e1bc3",
+"assets/lib/themes/theme_from_scratch.dart": "67405ebb134763563516b60a2c3e036f",
 "assets/packages/flex_color_picker/assets/opacity.png": "49c4f3bcb1b25364bb4c255edcaaf5b2",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
+"assets/shaders/ink_sparkle.frag": "997815677e6351a3bb18f3c6da702e4c",
 "assets/AssetManifest.json": "b5ad7fbb708c5d16aebc612eed895b18",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
-"assets/NOTICES": "8e044337207ad96ac79688b98d1df92d",
+"assets/NOTICES": "59fd97d322fe5a43013683e74988a149",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "b60a6e21df4ab50c92b5f4016c2ebed8",
-"/": "b60a6e21df4ab50c92b5f4016c2ebed8",
+"index.html": "30974f314632883c2a2bc9d11e158887",
+"/": "30974f314632883c2a2bc9d11e158887",
 "manifest.json": "b3b4999ffcf5c4e0855e1b26263d3524"
 };
 
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "/",
-"main.dart.js",
+  "main.dart.js",
 "index.html",
-"assets/NOTICES",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
@@ -155,9 +159,11 @@ self.addEventListener("fetch", (event) => {
     .then((cache) =>  {
       return cache.match(event.request).then((response) => {
         // Either respond with the cached resource, or perform a fetch and
-        // lazily populate the cache.
+        // lazily populate the cache only if the resource was successfully fetched.
         return response || fetch(event.request).then((response) => {
-          cache.put(event.request, response.clone());
+          if (response && Boolean(response.ok)) {
+            cache.put(event.request, response.clone());
+          }
           return response;
         });
       })

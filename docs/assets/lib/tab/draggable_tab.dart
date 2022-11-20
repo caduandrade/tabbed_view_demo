@@ -1,9 +1,10 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class DraggableTabExample extends StatelessWidget {
+class DraggableTabExample extends Example {
   @override
-  Widget build(BuildContext context) {
+  Widget buildMainWidget(BuildContext context) {
     List<TabData> tabs = [];
     for (var i = 1; i < 7; i++) {
       Widget tabContent = Center(child: Text('Content $i'));

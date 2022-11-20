@@ -1,9 +1,10 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class MenuMaxWidthExample extends StatelessWidget {
+class MenuMaxWidthExample extends Example {
   @override
-  Widget build(BuildContext context) {
+  Widget buildMainWidget(BuildContext context) {
     List<TabData> tabs = [];
     for (int i = 1; i < 11; i++) {
       tabs.add(TabData(text: 'Tab $i'));

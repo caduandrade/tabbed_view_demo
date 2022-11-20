@@ -2,34 +2,40 @@ import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class TabProgrammaticallyExample extends ExampleStateful {
-  TabProgrammaticallyExample(ExampleMenuNotifier menuNotifier)
-      : super(menuNotifier: menuNotifier);
-
+class TabProgrammaticallyExample extends Example {
   @override
-  AddTabExampleState createState() => AddTabExampleState();
-
-  @override
-  List<ExampleMenuWidget> menuWidgets() {
-    return [
-      MenuButton(id: 1, name: 'Add tab'),
-      MenuButton(id: 2, name: 'Remove tabs'),
-      MenuButton(id: 3, name: 'Change the first tab text'),
-      MenuButton(id: 4, name: 'First tab non-closable'),
-      MenuButton(id: 5, name: 'New controller')
-    ];
+  Widget buildMainWidget(BuildContext context) {
+    return TabProgrammaticallyStateful();
   }
 }
 
-class AddTabExampleState
-    extends ExampleStatefulState<TabProgrammaticallyExample> {
+class TabProgrammaticallyStateful extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => TabProgrammaticallyState();
+}
+
+class TabProgrammaticallyState extends State<TabProgrammaticallyStateful> {
   TabbedViewController _controller = TabbedViewController([]);
   int _lastTabIndex = 1;
 
   @override
   Widget build(BuildContext context) {
-    TabbedView tabbedView = TabbedView(controller: _controller);
-    return tabbedView;
+    Widget menu = Wrap(children: [
+      ElevatedButton(onPressed: _onAdd, child: Text('Add tab')),
+      ElevatedButton(onPressed: _onRemoveTabs, child: Text('Remove tabs')),
+      ElevatedButton(
+          onPressed: _onChangeTabText,
+          child: Text('Change the first tab text')),
+      ElevatedButton(
+          onPressed: _onDisableClose, child: Text('First tab non-closable')),
+      ElevatedButton(
+          onPressed: _onNewControllerInstance, child: Text('New controller'))
+    ], spacing: 10, runSpacing: 10);
+
+    return Column(children: [
+      Padding(padding: EdgeInsets.only(bottom: 10), child: menu),
+      Expanded(child: TabbedView(controller: _controller))
+    ], crossAxisAlignment: CrossAxisAlignment.stretch);
   }
 
   _onAdd() {
@@ -64,20 +70,5 @@ class AddTabExampleState
     setState(() {
       _controller = TabbedViewController([]);
     });
-  }
-
-  @override
-  void onButtonClick(int buttonId) {
-    if (buttonId == 1) {
-      _onAdd();
-    } else if (buttonId == 2) {
-      _onRemoveTabs();
-    } else if (buttonId == 3) {
-      _onChangeTabText();
-    } else if (buttonId == 4) {
-      _onDisableClose();
-    } else if (buttonId == 5) {
-      _onNewControllerInstance();
-    }
   }
 }

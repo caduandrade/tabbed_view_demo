@@ -1,9 +1,10 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 
-class TabsAreaButtonsExample extends StatelessWidget {
+class TabsAreaButtonsExample extends Example {
   @override
-  Widget build(BuildContext context) {
+  Widget buildMainWidget(BuildContext context) {
     TabbedViewController controller = TabbedViewController([]);
 
     TabbedView tabbedView = TabbedView(

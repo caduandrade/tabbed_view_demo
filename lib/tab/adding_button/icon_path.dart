@@ -1,10 +1,11 @@
+import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view/tabbed_view.dart';
 import 'package:tabbed_view_demo/snack_bar_mixin.dart';
 
-class IconPathExample extends StatelessWidget with SnackBarMixin {
+class IconPathExample extends Example with SnackBarMixin {
   @override
-  Widget build(BuildContext context) {
+  Widget buildMainWidget(BuildContext context) {
     TabData tab = TabData(text: 'Tab', buttons: [
       TabButton(
           icon: IconProvider.path(_path),

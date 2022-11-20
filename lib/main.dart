@@ -1,38 +1,38 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
-import 'package:tabbed_view_demo/tab/tab_programmatically.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_data.dart';
 import 'package:tabbed_view_demo/tab/adding_button/icon_path.dart';
 import 'package:tabbed_view_demo/tab/adding_button/menu_button.dart';
 import 'package:tabbed_view_demo/tab/adding_button/override_theme_color.dart';
+import 'package:tabbed_view_demo/tab/draggable_tab.dart';
+import 'package:tabbed_view_demo/tab/keep_alive.dart';
+import 'package:tabbed_view_demo/tab/non_closable_tab.dart';
+import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
+import 'package:tabbed_view_demo/tab/tab_close_listener.dart';
+import 'package:tabbed_view_demo/tab/tab_programmatically.dart';
+import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
+import 'package:tabbed_view_demo/tabs_area/tabs_area_buttons.dart';
 import 'package:tabbed_view_demo/themes/default_themes/classic_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/classic_theme_color_set.dart';
+import 'package:tabbed_view_demo/themes/default_themes/dark_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/dark_theme_color_set.dart';
+import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme_color_set.dart';
+import 'package:tabbed_view_demo/themes/default_themes/mobile_theme.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_color_set.dart';
 import 'package:tabbed_view_demo/themes/default_themes/mobile_theme_highlight_color.dart';
 import 'package:tabbed_view_demo/themes/menu/menu_ellipsis.dart';
 import 'package:tabbed_view_demo/themes/menu/menu_max_width.dart';
 import 'package:tabbed_view_demo/themes/tab/tab_alignment.dart';
 import 'package:tabbed_view_demo/themes/tab/tab_text_style.dart';
-import 'package:tabbed_view_demo/tab/draggable_tab.dart';
-import 'package:tabbed_view_demo/tab/keep_alive.dart';
-import 'package:tabbed_view_demo/tab/non_closable_tab.dart';
-import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
-import 'package:tabbed_view_demo/tab/tab_close_listener.dart';
-import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
-import 'package:tabbed_view_demo/tabs_area/tabs_area_buttons.dart';
-import 'package:tabbed_view_demo/themes/default_themes/dark_theme.dart';
-import 'package:tabbed_view_demo/themes/default_themes/minimalist_theme.dart';
-import 'package:tabbed_view_demo/themes/default_themes/mobile_theme.dart';
 import 'package:tabbed_view_demo/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart';
 import 'package:tabbed_view_demo/themes/tabs_area/tabs_area_color.dart';
 import 'package:tabbed_view_demo/themes/tabs_area/tabs_area_gaps.dart';
 import 'package:tabbed_view_demo/themes/theme_from_scratch.dart';
 
-import 'get_started/get_started.dart';
 import 'get_started/close_button_tooltip.dart';
 import 'get_started/content_builder.dart';
+import 'get_started/get_started.dart';
 
 void main() {
   Size? maxSize;
@@ -42,181 +42,183 @@ void main() {
       initialWidthWeight: .95,
       initialHeightWeight: .95,
       maxSize: maxSize,
-      title: 'Tabbed view (1.10.0)',
+      title: 'Tabbed view (1.15.0)',
       widgetBackground: Colors.white,
-      appMenuBuilder: (exampleMenuNotifier) {
+      appMenuBuilder: () {
         return [
-          MenuItem(
+          DemoMenuItem(
               name: 'Get started',
-              example: GetStartedExample(),
+              builder: () => GetStartedExample(),
               codeFile: 'lib/get_started/get_started.dart'),
-          MenuItem(
+          DemoMenuItem(
               name: 'Content builder',
-              example: ContentBuilderExample(),
+              builder: () => ContentBuilderExample(),
               codeFile: 'lib/get_started/content_builder.dart',
               indentation: 2),
-          MenuItem(
+          DemoMenuItem(
               name: 'Close button tooltip',
-              example: CloseButtonTooltipExample(),
+              builder: () => CloseButtonTooltipExample(),
               codeFile: 'lib/get_started/close_button_tooltip.dart',
               indentation: 2),
-          MenuItem(name: 'Tab', italic: true),
-          MenuItem(name: 'Adding button', italic: true, indentation: 2),
-          MenuItem(
+          DemoMenuItem(name: 'Tab', italic: true),
+          DemoMenuItem(name: 'Adding button', italic: true, indentation: 2),
+          DemoMenuItem(
               name: 'Icon data',
-              example: IconDataExample(),
+              builder: () => IconDataExample(),
               codeFile: 'lib/tab/adding_button/icon_data.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Icon path',
-              example: IconPathExample(),
+              builder: () => IconPathExample(),
               codeFile: 'lib/tab/adding_button/icon_path.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Override theme color',
-              example: OverrideThemeColorExample(),
+              builder: () => OverrideThemeColorExample(),
               codeFile: 'lib/tab/adding_button/override_theme_color.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Menu button',
-              example: MenuButtonExample(),
+              builder: () => MenuButtonExample(),
               codeFile: 'lib/tab/adding_button/menu_button.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Non-closable tab',
-              example: NonClosableExample(),
+              builder: () => NonClosableExample(),
               codeFile: 'lib/tab/non_closable_tab.dart',
               indentation: 2),
-          MenuItem(
+          DemoMenuItem(
               name: 'Close interceptor',
-              example: TabCloseInterceptorExample(),
+              builder: () => TabCloseInterceptorExample(),
               codeFile: 'lib/tab/tab_close_interceptor.dart',
+              consoleEnabled: true,
               indentation: 2),
-          MenuItem(
+          DemoMenuItem(
               name: 'Close listener',
-              example: TabCloseListenerExample(),
+              builder: () => TabCloseListenerExample(),
               codeFile: 'lib/tab/tab_close_listener.dart',
+              consoleEnabled: true,
               indentation: 2),
-          MenuItem(
+          DemoMenuItem(
               name: 'Selection listener',
-              example: TabSelectionListenerExample(),
+              builder: () => TabSelectionListenerExample(),
               codeFile: 'lib/tab/tab_selection_listener.dart',
               consoleEnabled: true,
               indentation: 2),
-          MenuItem(
+          DemoMenuItem(
               name: 'Draggable',
-              example: DraggableTabExample(),
+              builder: () => DraggableTabExample(),
               codeFile: 'lib/tab/draggable_tab.dart',
               indentation: 2),
-          MenuItem(
+          DemoMenuItem(
               name: 'Keep alive',
-              example: KeepAliveExample(),
+              builder: () => KeepAliveExample(),
               codeFile: 'lib/tab/keep_alive.dart',
               indentation: 2),
-          MenuItem(
+          DemoMenuItem(
               name: 'Using programmatically',
-              example: TabProgrammaticallyExample(exampleMenuNotifier),
+              builder: () => TabProgrammaticallyExample(),
               codeFile: 'lib/tab/tab_programmatically.dart',
               indentation: 2),
-          MenuItem(name: 'Tabs area', italic: true),
-          MenuItem(
+          DemoMenuItem(name: 'Tabs area', italic: true),
+          DemoMenuItem(
               name: 'Buttons',
-              example: TabsAreaButtonsExample(),
+              builder: () => TabsAreaButtonsExample(),
               codeFile: 'lib/tabs_area/tabs_area_buttons.dart',
               indentation: 2),
-          MenuItem(name: 'Themes', italic: true),
-          MenuItem(name: 'Tab', italic: true, indentation: 2),
-          MenuItem(
+          DemoMenuItem(name: 'Themes', italic: true),
+          DemoMenuItem(name: 'Tab', italic: true, indentation: 2),
+          DemoMenuItem(
               name: 'Text style',
-              example: TabTextStyleExample(),
+              builder: () => TabTextStyleExample(),
               codeFile: 'lib/themes/tab/tab_text_style.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Alignment',
-              example: TabAlignmentExample(),
+              builder: () => TabAlignmentExample(),
               codeFile: 'lib/themes/tab/tab_alignment.dart',
               indentation: 3),
-          MenuItem(name: 'Tabs area', italic: true, indentation: 2),
-          MenuItem(
+          DemoMenuItem(name: 'Tabs area', italic: true, indentation: 2),
+          DemoMenuItem(
               name: 'Color',
-              example: TabsAreaColorExample(),
+              builder: () => TabsAreaColorExample(),
               codeFile: 'lib/themes/tabs_area/tabs_area_color.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Tab gaps',
-              example: TabsAreaGapsPage(),
+              builder: () => TabsAreaGapsPage(),
               codeFile: 'lib/themes/tabs_area/tabs_area_gaps.dart',
               indentation: 3),
-          MenuItem(name: 'Buttons area', italic: true, indentation: 3),
-          MenuItem(
+          DemoMenuItem(name: 'Buttons area', italic: true, indentation: 3),
+          DemoMenuItem(
               name: 'Menu button',
-              example: HiddenTabsMenuButtonIconExample(),
+              builder: () => HiddenTabsMenuButtonIconExample(),
               codeFile:
                   'lib/themes/tabs_area/buttons_area/hidden_tabs_menu_button_icon.dart',
               indentation: 4),
-          MenuItem(name: 'Menu', italic: true, indentation: 2),
-          MenuItem(
+          DemoMenuItem(name: 'Menu', italic: true, indentation: 2),
+          DemoMenuItem(
               name: 'Max width',
-              example: MenuMaxWidthExample(),
+              builder: () => MenuMaxWidthExample(),
               codeFile: 'lib/themes/menu/menu_max_width.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Ellipsis on text overflow',
-              example: MenuEllipsisExample(),
+              builder: () => MenuEllipsisExample(),
               codeFile: 'lib/themes/menu/menu_ellipsis.dart',
               indentation: 3),
-          MenuItem(name: 'Default themes', italic: true, indentation: 2),
-          MenuItem(
+          DemoMenuItem(name: 'Default themes', italic: true, indentation: 2),
+          DemoMenuItem(
               name: 'Classic',
-              example: ClassicThemeExample(),
+              builder: () => ClassicThemeExample(),
               codeFile: 'lib/themes/default_themes/classic_theme.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Color set',
-              example: ClassicThemeColorSetExample(),
+              builder: () => ClassicThemeColorSetExample(),
               codeFile:
                   'lib/themes/default_themes/classic_theme_color_set.dart',
               indentation: 4),
-          MenuItem(
+          DemoMenuItem(
               name: 'Dark',
-              example: DarkThemeExample(),
+              builder: () => DarkThemeExample(),
               codeFile: 'lib/themes/default_themes/dark_theme.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Color set',
-              example: DarkThemeColorSetExample(),
+              builder: () => DarkThemeColorSetExample(),
               codeFile: 'lib/themes/default_themes/dark_theme_color_set.dart',
               indentation: 4),
-          MenuItem(
+          DemoMenuItem(
               name: 'Mobile',
-              example: MobileThemeExample(),
+              builder: () => MobileThemeExample(),
               codeFile: 'lib/themes/default_themes/mobile_theme.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Color set',
-              example: MobileThemeColorSetExample(),
+              builder: () => MobileThemeColorSetExample(),
               codeFile: 'lib/themes/default_themes/mobile_theme_color_set.dart',
               indentation: 4),
-          MenuItem(
+          DemoMenuItem(
               name: 'Highlight color',
-              example: MobileThemeHighlightColorExample(),
+              builder: () => MobileThemeHighlightColorExample(),
               codeFile:
                   'lib/themes/default_themes/mobile_theme_highlight_color.dart',
               indentation: 4),
-          MenuItem(
+          DemoMenuItem(
               name: 'Minimalist',
-              example: MinimalistThemeExample(),
+              builder: () => MinimalistThemeExample(),
               codeFile: 'lib/themes/default_themes/minimalist_theme.dart',
               indentation: 3),
-          MenuItem(
+          DemoMenuItem(
               name: 'Color set',
-              example: MinimalistThemeColorSetExample(),
+              builder: () => MinimalistThemeColorSetExample(),
               codeFile:
                   'lib/themes/default_themes/minimalist_theme_color_set.dart',
               indentation: 4),
-          MenuItem(
+          DemoMenuItem(
               name: 'Theme from scratch',
-              example: ThemeFromScratchExample(),
+              builder: () => ThemeFromScratchExample(),
               codeFile: 'lib/themes/theme_from_scratch.dart',
               indentation: 2)
         ];
