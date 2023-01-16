@@ -9,6 +9,7 @@ import 'package:tabbed_view_demo/tab/keep_alive.dart';
 import 'package:tabbed_view_demo/tab/non_closable_tab.dart';
 import 'package:tabbed_view_demo/tab/tab_close_interceptor.dart';
 import 'package:tabbed_view_demo/tab/tab_close_listener.dart';
+import 'package:tabbed_view_demo/tab/tab_leading.dart';
 import 'package:tabbed_view_demo/tab/tab_programmatically.dart';
 import 'package:tabbed_view_demo/tab/tab_selection_listener.dart';
 import 'package:tabbed_view_demo/tabs_area/tabs_area_buttons.dart';
@@ -42,7 +43,7 @@ void main() {
       initialWidthWeight: .95,
       initialHeightWeight: .95,
       maxSize: maxSize,
-      title: 'Tabbed view (1.15.0)',
+      title: 'Tabbed view (1.16.0)',
       widgetBackground: Colors.white,
       appMenuBuilder: () {
         return [
@@ -104,6 +105,11 @@ void main() {
               builder: () => TabSelectionListenerExample(),
               codeFile: 'lib/tab/tab_selection_listener.dart',
               consoleEnabled: true,
+              indentation: 2),
+          DemoMenuItem(
+              name: 'Leading widget',
+              builder: () => TabLeadingExample(),
+              codeFile: 'lib/tab/tab_leading.dart',
               indentation: 2),
           DemoMenuItem(
               name: 'Draggable',
