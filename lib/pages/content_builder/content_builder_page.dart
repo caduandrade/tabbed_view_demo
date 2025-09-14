@@ -1,18 +1,15 @@
 import 'package:demoflu/demoflu.dart';
 import 'package:flutter/material.dart';
 import 'package:tabbed_view_demo/pages/content_builder/content_builder_example.dart';
+import 'package:tabbed_view_demo/pages/mixin_reload_example.dart';
 
-class ContentBuilderPage extends DemoFluPage {
-  final ValueNotifier<Key> _exampleKey = ValueNotifier(UniqueKey());
-
+class ContentBuilderPage extends DemoFluPage with MixinReloadExample {
   @override
   void buildSections(BuildContext context, PageSections sections) {
-    sections.widget((context) => TextButton(
-        onPressed: () => _exampleKey.value = UniqueKey(),
-        child: Text('Reload example')));
+    addReloadButton(context: context, sections: sections);
 
-    sections.widget((context) => ContentBuilderExample(key: _exampleKey.value))
-      ..listenable = _exampleKey
+    sections.widget((context) => ContentBuilderExample(key: exampleKey.value))
+      ..listenable = exampleKey
       ..runMacro(id: 'example', context: context);
 
     sections

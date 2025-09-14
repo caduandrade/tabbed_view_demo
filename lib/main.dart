@@ -7,6 +7,14 @@ import 'package:tabbed_view_demo/pages/tab/button/icon_data/icon_data_page.dart'
 import 'package:tabbed_view_demo/pages/tab/button/icon_path/icon_path_page.dart';
 import 'package:tabbed_view_demo/pages/tab/button/menu/menu_page.dart';
 import 'package:tabbed_view_demo/pages/tab/draggable/draggable_page.dart';
+import 'package:tabbed_view_demo/pages/tab/keep_alive/keep_alive_page.dart';
+import 'package:tabbed_view_demo/pages/tab/non_closable/non_closable_page.dart';
+import 'package:tabbed_view_demo/pages/tab/tab_leading/tab_leading_page.dart';
+import 'package:tabbed_view_demo/pages/tab/tab_programmatically/tab_programmatically_page.dart';
+import 'package:tabbed_view_demo/pages/tab/tab_remove_interceptor/tab_remove_interceptor_page.dart';
+import 'package:tabbed_view_demo/pages/tab/tab_remove_listener/tab_remove_listener_page.dart';
+import 'package:tabbed_view_demo/pages/tab/tab_selection_interceptor/tab_selection_interceptor_page.dart';
+import 'package:tabbed_view_demo/pages/tab/tab_selection_listener/tab_selection_listener_page.dart';
 
 void main() {
   DemoFluApp app =
@@ -23,17 +31,25 @@ void main() {
   app.run();
 }
 
-List<DemoMenuItem> get _rootMenus =>
-    [_getStarted, _contentBuilder, _closeButtonTooltip, _tab];
+List<DemoMenuItem> get _rootMenus => [_getStarted, _contentBuilder, _tab];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
 DemoMenuItem get _contentBuilder =>
     DemoMenuItem('Content builder', page: () => ContentBuilderPage());
-DemoMenuItem get _closeButtonTooltip =>
-    DemoMenuItem('Close button tooltip', page: () => CloseButtonTooltipPage());
-DemoMenuItem get _tab =>
-    DemoMenuItem('Tab', children: [_tabButton, _draggable]);
+DemoMenuItem get _tab => DemoMenuItem('Tab', children: [
+      _tabButton,
+      _draggable,
+      _nonClosable,
+      _closeButtonTooltip,
+      _keepAlive,
+      _selectionListener,
+      _selectionInterceptor,
+      _removeListener,
+      _removeInterceptor,
+      _tabLeading,
+      _programmatically
+    ]);
 DemoMenuItem get _tabButton =>
     DemoMenuItem('Button', children: [_iconData, _iconPath, _tabMenu]);
 DemoMenuItem get _iconData =>
@@ -43,3 +59,21 @@ DemoMenuItem get _iconPath =>
 DemoMenuItem get _tabMenu => DemoMenuItem('Menu', page: () => MenuPage());
 DemoMenuItem get _draggable =>
     DemoMenuItem('Draggable', page: () => DraggablePage());
+DemoMenuItem get _nonClosable =>
+    DemoMenuItem('Non-closable', page: () => NonClosablePage());
+DemoMenuItem get _closeButtonTooltip =>
+    DemoMenuItem('Close button tooltip', page: () => CloseButtonTooltipPage());
+DemoMenuItem get _keepAlive =>
+    DemoMenuItem('Keep alive', page: () => KeepAlivePage());
+DemoMenuItem get _selectionListener =>
+    DemoMenuItem('Selection listener', page: () => TabSelectionListenerPage());
+DemoMenuItem get _removeListener =>
+    DemoMenuItem('Remove listener', page: () => TabRemoveListenerPage());
+DemoMenuItem get _removeInterceptor =>
+    DemoMenuItem('Remove interceptor', page: () => TabRemoveInterceptorPage());
+DemoMenuItem get _tabLeading =>
+    DemoMenuItem('Leading', page: () => TabLeadingPage());
+DemoMenuItem get _programmatically => DemoMenuItem('Changing programmatically',
+    page: () => TabProgrammaticallyPage());
+DemoMenuItem get _selectionInterceptor => DemoMenuItem('Selection interceptor',
+    page: () => TabSelectionInterceptorPage());

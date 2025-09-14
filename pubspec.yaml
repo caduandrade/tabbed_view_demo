@@ -43,6 +43,14 @@ flutter:
     - lib/pages/tab/button/icon_path/
     - lib/pages/tab/button/menu/
     - lib/pages/tab/draggable/
+    - lib/pages/tab/non_closable/
+    - lib/pages/tab/keep_alive/
+    - lib/pages/tab/tab_leading/
+    - lib/pages/tab/tab_remove_interceptor/
+    - lib/pages/tab/tab_remove_listener/
+    - lib/pages/tab/tab_selection_listener/
+    - lib/pages/tab/tab_selection_interceptor/
+    - lib/pages/tab/tab_programmatically/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
