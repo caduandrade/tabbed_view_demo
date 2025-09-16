@@ -50,6 +50,8 @@ flutter:
     - lib/pages/tab/tab_remove_listener/
     - lib/pages/tab/tab_selection_listener/
     - lib/pages/tab/tab_programmatically/
+    - lib/pages/tabs_area/
+    - lib/pages/tabs_area/tabs_area_buttons/
     - lib/pages/theme/
     - lib/pages/theme/default_themes/
     - lib/pages/theme/default_themes/classic_theme/

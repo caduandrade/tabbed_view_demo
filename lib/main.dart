@@ -14,6 +14,7 @@ import 'package:tabbed_view_demo/pages/tab/tab_programmatically/tab_programmatic
 import 'package:tabbed_view_demo/pages/tab/tab_remove_interceptor/tab_remove_interceptor_page.dart';
 import 'package:tabbed_view_demo/pages/tab/tab_remove_listener/tab_remove_listener_page.dart';
 import 'package:tabbed_view_demo/pages/tab/tab_selection_listener/tab_selection_listener_page.dart';
+import 'package:tabbed_view_demo/pages/tabs_area/tabs_area_buttons/tabs_area_buttons_page.dart';
 import 'package:tabbed_view_demo/pages/theme/default_themes/classic_theme/classic_theme_page.dart';
 import 'package:tabbed_view_demo/pages/theme/default_themes/minimalist_theme/minimalist_theme_page.dart';
 import 'package:tabbed_view_demo/pages/theme/default_themes/underline_theme/underline_theme_page.dart';
@@ -34,7 +35,7 @@ void main() {
 }
 
 List<DemoMenuItem> get _rootMenus =>
-    [_getStarted, _contentBuilder, _tab, _theme];
+    [_getStarted, _contentBuilder, _tab, _tabsArea, _theme];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
@@ -77,6 +78,10 @@ DemoMenuItem get _tabLeading =>
     DemoMenuItem('Leading', page: () => TabLeadingPage());
 DemoMenuItem get _programmatically => DemoMenuItem('Changing programmatically',
     page: () => TabProgrammaticallyPage());
+DemoMenuItem get _tabsArea =>
+    DemoMenuItem('Tabs area', children: [_tabsAreaButtons]);
+DemoMenuItem get _tabsAreaButtons =>
+    DemoMenuItem('Buttons', page: () => TabsAreaButtonsPage());
 DemoMenuItem get _theme => DemoMenuItem('Theme', children: [_defaultThemes]);
 DemoMenuItem get _defaultThemes => DemoMenuItem('Default themes',
     children: [_classicTheme, _minimalistTheme, _underlineTheme]);
