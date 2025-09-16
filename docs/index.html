@@ -52,8 +52,17 @@
 </style>
 
 <div id="loading-container">
-  Loading...
+    Loading...
 </div>
+
 <script src="flutter_bootstrap.js" async></script>
+<script>
+    window.addEventListener('load', function(event) {
+      var loadingContainer = document.getElementById('loading-container');
+      if (loadingContainer) {
+        loadingContainer.remove();
+      }
+    });
+</script>
 </body>
 </html>
