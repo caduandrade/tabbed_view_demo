@@ -49,8 +49,12 @@ flutter:
     - lib/pages/tab/tab_remove_interceptor/
     - lib/pages/tab/tab_remove_listener/
     - lib/pages/tab/tab_selection_listener/
-    - lib/pages/tab/tab_selection_interceptor/
     - lib/pages/tab/tab_programmatically/
+    - lib/pages/theme/
+    - lib/pages/theme/default_themes/
+    - lib/pages/theme/default_themes/classic_theme/
+    - lib/pages/theme/default_themes/minimalist_theme/
+    - lib/pages/theme/default_themes/underline_theme/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

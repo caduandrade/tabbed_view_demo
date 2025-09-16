@@ -13,8 +13,6 @@ class TabProgrammaticallyPage extends DemoFluPage with MixinReloadExample {
       ..listenable = exampleKey
       ..runMacro(id: 'example', context: context);
 
-    sections.console(title: 'Console');
-
     sections.code(
         'lib/pages/tab/tab_programmatically/tab_programmatically_example.dart',
         title: 'Code',

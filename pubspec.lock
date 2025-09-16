@@ -203,7 +203,7 @@ packages:
       path: "../tvmr"
       relative: true
     source: path
-    version: "2.0.0-rc.8"
+    version: "2.0.0-rc.10"
   term_glyph:
     dependency: transitive
     description:

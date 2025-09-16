@@ -13,12 +13,14 @@ import 'package:tabbed_view_demo/pages/tab/tab_leading/tab_leading_page.dart';
 import 'package:tabbed_view_demo/pages/tab/tab_programmatically/tab_programmatically_page.dart';
 import 'package:tabbed_view_demo/pages/tab/tab_remove_interceptor/tab_remove_interceptor_page.dart';
 import 'package:tabbed_view_demo/pages/tab/tab_remove_listener/tab_remove_listener_page.dart';
-import 'package:tabbed_view_demo/pages/tab/tab_selection_interceptor/tab_selection_interceptor_page.dart';
 import 'package:tabbed_view_demo/pages/tab/tab_selection_listener/tab_selection_listener_page.dart';
+import 'package:tabbed_view_demo/pages/theme/default_themes/classic_theme/classic_theme_page.dart';
+import 'package:tabbed_view_demo/pages/theme/default_themes/minimalist_theme/minimalist_theme_page.dart';
+import 'package:tabbed_view_demo/pages/theme/default_themes/underline_theme/underline_theme_page.dart';
 
 void main() {
   DemoFluApp app =
-      DemoFluApp(title: 'TabbedView (2.0.0-rc.7)', rootMenus: _rootMenus);
+      DemoFluApp(title: 'TabbedView (2.0.0-rc.9)', rootMenus: _rootMenus);
   app.macro.widget('example', (context, section) {
     section
       ..title = 'Example'
@@ -31,7 +33,8 @@ void main() {
   app.run();
 }
 
-List<DemoMenuItem> get _rootMenus => [_getStarted, _contentBuilder, _tab];
+List<DemoMenuItem> get _rootMenus =>
+    [_getStarted, _contentBuilder, _tab, _theme];
 
 DemoMenuItem get _getStarted =>
     DemoMenuItem('Get started', page: () => GetStartedPage());
@@ -44,7 +47,6 @@ DemoMenuItem get _tab => DemoMenuItem('Tab', children: [
       _closeButtonTooltip,
       _keepAlive,
       _selectionListener,
-      _selectionInterceptor,
       _removeListener,
       _removeInterceptor,
       _tabLeading,
@@ -75,5 +77,12 @@ DemoMenuItem get _tabLeading =>
     DemoMenuItem('Leading', page: () => TabLeadingPage());
 DemoMenuItem get _programmatically => DemoMenuItem('Changing programmatically',
     page: () => TabProgrammaticallyPage());
-DemoMenuItem get _selectionInterceptor => DemoMenuItem('Selection interceptor',
-    page: () => TabSelectionInterceptorPage());
+DemoMenuItem get _theme => DemoMenuItem('Theme', children: [_defaultThemes]);
+DemoMenuItem get _defaultThemes => DemoMenuItem('Default themes',
+    children: [_classicTheme, _minimalistTheme, _underlineTheme]);
+DemoMenuItem get _classicTheme =>
+    DemoMenuItem('Classic theme', page: () => ClassicThemePage());
+DemoMenuItem get _minimalistTheme =>
+    DemoMenuItem('Minimalist theme', page: () => MinimalistThemePage());
+DemoMenuItem get _underlineTheme =>
+    DemoMenuItem('Underline theme', page: () => UnderlineThemePage());
