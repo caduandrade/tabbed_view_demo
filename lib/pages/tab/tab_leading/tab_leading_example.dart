@@ -12,10 +12,11 @@ class TabLeadingExampleState extends State<TabLeadingExample> {
   //@demoflu_start:example
   final TabbedViewController _controller = TabbedViewController([
     TabData(
+        id: 'tab1',
         text: 'Tab 1',
         leading: (context, status) => Icon(Icons.star, size: 16)),
-    TabData(text: 'Tab 2'),
-    TabData(text: 'Tab 3')
+    TabData(id: 'tab2', text: 'Tab 2'),
+    TabData(id: 'tab3', text: 'Tab 3')
   ]);
   //@demoflu_end:example
 

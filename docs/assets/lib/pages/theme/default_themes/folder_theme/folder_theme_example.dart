@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+import 'package:tabbed_view/tabbed_view.dart';
+
+class FolderThemeExample extends StatefulWidget {
+  const FolderThemeExample(
+      {super.key,
+      required this.brightness,
+      required this.tabBarPosition,
+      required this.sideTabsLayout,
+      required this.colorSet});
+
+  final Brightness brightness;
+  final TabBarPosition tabBarPosition;
+  final SideTabsLayout sideTabsLayout;
+  final MaterialColor? colorSet;
+
+  @override
+  State<StatefulWidget> createState() => FolderThemeExampleState();
+}
+
+class FolderThemeExampleState extends State<FolderThemeExample> {
+  final TabbedViewController _controller = TabbedViewController([
+    TabData(id: 'tab1', text: 'Tab 1'),
+    TabData(id: 'tab2', text: 'Tab 2'),
+    TabData(id: 'tab3', text: 'Tab 3')
+  ]);
+
+  @override
+  Widget build(BuildContext context) {
+    final flutterTheme = ThemeData.from(
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Theme.of(context).colorScheme.primary,
+        brightness: widget.brightness,
+      ),
+      useMaterial3: Theme.of(context).useMaterial3,
+    );
+
+    final TabbedViewThemeData theme = TabbedViewThemeData.folder(
+      brightness: widget.brightness,
+      colorSet: widget.colorSet,
+    );
+    theme.tabsArea.position = widget.tabBarPosition;
+    theme.tabsArea.sideTabsLayout = widget.sideTabsLayout;
+
+    return Theme(
+      data: flutterTheme,
+      child: Material(
+        color: flutterTheme.colorScheme.surface,
+        child: Padding(
+          padding: EdgeInsets.all(32),
+          child: TabbedViewTheme(
+            data: theme,
+            child: TabbedView(controller: _controller),
+          ),
+        ),
+      ),
+    );
+  }
+}

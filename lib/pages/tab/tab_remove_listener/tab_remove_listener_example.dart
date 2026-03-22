@@ -11,9 +11,11 @@ class TabRemoveListenerExample extends StatefulWidget {
 
 class TabRemoveListenerExampleState extends State<TabRemoveListenerExample> {
   //@demoflu_start:example
-  final TabbedViewController _controller = TabbedViewController(
-      [TabData(text: 'Tab 1'), TabData(text: 'Tab 2'), TabData(text: 'Tab 3')],
-      onTabRemove: (TabData tabData) => print('${tabData.text} removed'));
+  final TabbedViewController _controller = TabbedViewController([
+    TabData(id: 'tab1', text: 'Tab 1'),
+    TabData(id: 'tab2', text: 'Tab 2'),
+    TabData(id: 'tab3', text: 'Tab 3')
+  ], onTabRemoved: (TabData tabData) => print('${tabData.text} removed'));
   //@demoflu_end:example
 
   @override

@@ -3,7 +3,7 @@ description: TabbedView Demo
 
 publish_to: 'none'
 
-version: 2.0.0
+version: 3.0.0-rc.3
 
 environment:
   sdk: '>=2.17.0 <3.0.0'
@@ -11,8 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  tabbed_view: ^2.0.0-rc.11
-    #path: ../tvmr
+  tabbed_view: #^2.0.0-rc.11
+    path: ../tabbed_view
   demoflu: ^2.5.0
     #path: ../demoflu
 
@@ -35,9 +35,11 @@ flutter:
   assets:
     - lib/pages/
     - lib/pages/get_started/
-    - lib/pages/content_builder/
+    - lib/pages/view_builder/
+    - lib/pages/declarative_mode/
     - lib/pages/close_button_tooltip/
     - lib/pages/tab/
+    - lib/pages/tab/tooltip/
     - lib/pages/tab/button/
     - lib/pages/tab/button/icon_data/
     - lib/pages/tab/button/icon_path/
@@ -56,7 +58,10 @@ flutter:
     - lib/pages/theme/default_themes/
     - lib/pages/theme/default_themes/classic_theme/
     - lib/pages/theme/default_themes/minimalist_theme/
+    - lib/pages/theme/default_themes/folder_theme/
     - lib/pages/theme/default_themes/underline_theme/
+    - lib/pages/theme/individual_tab_theming/
+    - lib/pages/theme/max_tab_size/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

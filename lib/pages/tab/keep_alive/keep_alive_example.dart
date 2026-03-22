@@ -12,15 +12,17 @@ class KeepAliveExampleState extends State<KeepAliveExample> {
   //@demoflu_start:example
   final TabbedViewController _controller = TabbedViewController([
     TabData(
+        id: 't',
         text: 'TextField',
-        content: Padding(
+        view: Padding(
             child: TextField(
                 decoration: InputDecoration(
                     isDense: true, border: OutlineInputBorder())),
             padding: EdgeInsets.all(8))),
     TabData(
+        id: 'tka',
         text: 'TextField (keepAlive)',
-        content: Padding(
+        view: Padding(
             child: TextField(
                 decoration: InputDecoration(
                     isDense: true, border: OutlineInputBorder())),

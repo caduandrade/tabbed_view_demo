@@ -17,8 +17,12 @@ class GetStartedExampleState extends State<GetStartedExample> {
     _controller = TabbedViewController(List.generate(
       6,
       (i) => TabData(
+        id: i,
         text: 'Tab ${i + 1}',
-        content: Center(child: Text('Content ${i + 1}')),
+        view: Center(
+            child: Text(
+          'Content ${i + 1}',
+        )),
       ),
     ));
   }

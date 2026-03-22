@@ -11,6 +11,7 @@ class IconDataExample extends StatefulWidget {
 class IconDataExampleState extends State<IconDataExample> {
   final TabbedViewController _controller = TabbedViewController([
     TabData(
+        id: 'tab',
         text: 'Tab',
         buttonsBuilder: (context) => [
               TabButton.icon(IconProvider.data(Icons.phone),

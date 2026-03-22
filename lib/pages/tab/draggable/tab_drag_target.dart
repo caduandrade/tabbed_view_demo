@@ -11,7 +11,7 @@ class TabDragTargetState extends State<TabDragTarget> {
 
   @override
   Widget build(BuildContext context) {
-    return DragTarget<DraggableData>(
+    return DragTarget<DraggableTabData>(
       builder: (
         BuildContext context,
         List<dynamic> accepted,
@@ -27,9 +27,9 @@ class TabDragTargetState extends State<TabDragTarget> {
         );
       },
       onAcceptWithDetails: (details) {
-        final DraggableData data = details.data;
+        final DraggableTabData data = details.data;
         setState(() {
-          _acceptedData = data.tabData.value;
+          _acceptedData = data.tab.value;
         });
       },
     );

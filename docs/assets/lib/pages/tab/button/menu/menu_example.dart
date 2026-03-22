@@ -11,6 +11,7 @@ class MenuExample extends StatefulWidget {
 class MenuExampleState extends State<MenuExample> {
   final TabbedViewController _controller = TabbedViewController([
     TabData(
+        id: 'tab',
         text: 'Tab',
         buttonsBuilder: (context) => [
               TabButton.menu((context) {

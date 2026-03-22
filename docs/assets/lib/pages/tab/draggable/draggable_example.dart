@@ -11,8 +11,10 @@ class DraggableExample extends StatefulWidget {
 
 class DraggableExampleState extends State<DraggableExample> {
   //@demoflu_start:example
-  final TabbedViewController _controller = TabbedViewController(
-      [TabData(text: 'Tab 1', value: 1), TabData(text: 'Tab 2', value: 2)]);
+  final TabbedViewController _controller = TabbedViewController([
+    TabData(id: 'tab1', text: 'Tab 1', value: 1),
+    TabData(id: 'tab2', text: 'Tab 2', value: 2)
+  ]);
   //@demoflu_end:example
 
   @override

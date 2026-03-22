@@ -9,8 +9,11 @@ class TabsAreaButtonsExample extends StatefulWidget {
 }
 
 class TabsAreaButtonsExampleState extends State<TabsAreaButtonsExample> {
-  final TabbedViewController _controller = TabbedViewController(
-      [TabData(text: 'Tab 1'), TabData(text: 'Tab 2'), TabData(text: 'Tab 3')]);
+  final TabbedViewController _controller = TabbedViewController([
+    TabData(id: 'tab1', text: 'Tab 1'),
+    TabData(id: 'tab2', text: 'Tab 2'),
+    TabData(id: 'tab3', text: 'Tab 3')
+  ]);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class TabsAreaButtonsExampleState extends State<TabsAreaButtonsExample> {
           buttons
               .add(TabButton.icon(IconProvider.data(Icons.add), onPressed: () {
             int millisecond = DateTime.now().millisecondsSinceEpoch;
-            _controller.addTab(TabData(text: '$millisecond'));
+            _controller.addTab(TabData(id: Object(), text: '$millisecond'));
           }));
           if (tabsCount > 0) {
             buttons.add(

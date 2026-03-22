@@ -11,6 +11,7 @@ class IconPathExample extends StatefulWidget {
 class IconPathExampleState extends State<IconPathExample> {
   final TabbedViewController _controller = TabbedViewController([
     TabData(
+        id: 'tab',
         text: 'Tab',
         buttonsBuilder: (context) => [
               TabButton.icon(IconProvider.path(_path),

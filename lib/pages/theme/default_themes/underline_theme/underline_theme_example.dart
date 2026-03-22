@@ -21,8 +21,11 @@ class UnderlineThemeExample extends StatefulWidget {
 }
 
 class UnderlineThemeExampleState extends State<UnderlineThemeExample> {
-  final TabbedViewController _controller = TabbedViewController(
-      [TabData(text: 'Tab 1'), TabData(text: 'Tab 2'), TabData(text: 'Tab 3')]);
+  final TabbedViewController _controller = TabbedViewController([
+    TabData(id: 'tab1', text: 'Tab 1'),
+    TabData(id: 'tab2', text: 'Tab 2'),
+    TabData(id: 'tab3', text: 'Tab 3')
+  ]);
 
   @override
   Widget build(BuildContext context) {

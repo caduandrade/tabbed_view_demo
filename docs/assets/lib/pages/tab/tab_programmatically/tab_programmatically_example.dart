@@ -37,8 +37,9 @@ class TabProgrammaticallyExampleState
 
   _onAdd() {
     _controller.addTab(TabData(
+        id: Object(),
         text: 'Tab $_lastTabIndex',
-        content: Center(child: Text('Content $_lastTabIndex'))));
+        view: Center(child: Text('Content $_lastTabIndex'))));
     _lastTabIndex++;
   }
 

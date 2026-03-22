@@ -12,8 +12,8 @@ class NonClosableExample extends StatefulWidget {
 class NonClosableExampleState extends State<NonClosableExample> {
   //@demoflu_start:example
   final TabbedViewController _controller = TabbedViewController([
-    TabData(text: 'Closable'),
-    TabData(text: 'Non-closable', closable: false)
+    TabData(id: 'c', text: 'Closable'),
+    TabData(id: 'nc', text: 'Non-closable', closable: false)
   ]);
   //@demoflu_end:example
 
