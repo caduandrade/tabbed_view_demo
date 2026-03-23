@@ -45,7 +45,7 @@ class _TabStyle extends MinimalistTabStyleResolver {
           return Colors.green.shade900;
         case TabStatus.hovered:
           return Colors.green.shade200;
-        case TabStatus.normal:
+        case TabStatus.unselected:
           return Colors.green.shade100;
       }
     }

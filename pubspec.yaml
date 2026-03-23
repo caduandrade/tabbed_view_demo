@@ -3,7 +3,7 @@ description: TabbedView Demo
 
 publish_to: 'none'
 
-version: 3.0.0-rc.3
+version: 3.0.0
 
 environment:
   sdk: '>=2.17.0 <3.0.0'
@@ -11,8 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  tabbed_view: #^2.0.0-rc.11
-    path: ../tabbed_view
+  tabbed_view: ^3.0.0
+    #path: ../tabbed_view
   demoflu: ^2.5.0
     #path: ../demoflu
 

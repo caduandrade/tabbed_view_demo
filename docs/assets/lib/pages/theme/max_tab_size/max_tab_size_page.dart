@@ -13,7 +13,8 @@ class MaxTabSizePage extends DemoFluPage with MixinReloadExample {
       ..listenable = exampleKey
       ..runMacro(id: 'example', context: context);
 
-    sections.code('lib/pages/theme/max_tab_size/max_tab_size_example.dart').title =
-        'Code';
+    sections
+        .code('lib/pages/theme/max_tab_size/max_tab_size_example.dart')
+        .title = 'Code';
   }
 }

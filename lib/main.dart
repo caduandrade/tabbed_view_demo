@@ -26,7 +26,7 @@ import 'package:tabbed_view_demo/pages/theme/default_themes/underline_theme/unde
 
 void main() {
   DemoFluApp app =
-      DemoFluApp(title: 'TabbedView (3.0.0-rc.3)', rootMenus: _rootMenus);
+      DemoFluApp(title: 'TabbedView (3.0.0)', rootMenus: _rootMenus);
   app.macro.widget('example', (context, section) {
     section
       ..title = 'Example'

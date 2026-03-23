@@ -26353,7 +26353,7 @@ l=A.b([A.aSq(),A.aRX(),A.aRZ(),A.cy("Tab",A.b([A.aTE(),A.cy("Button",A.b([A.aSu(
 s=A.b([],t.s)
 r=$.a9()
 q=t.N
-l=A.aKV(l,"TabbedView (3.0.0-rc.3)")
+l=A.aKV(l,"TabbedView (3.0.0)")
 p=Math.max(0,0)
 o=Math.max(0,24)
 n=t.z
@@ -27555,7 +27555,7 @@ $S:2}
 A.aul.prototype={
 $1(a){var s=A.db().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/e4b8dca3f1b4ede4c30371002441c88c12187ed6/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/052f31d115eceda8cbff1b3481fcde4330c4ae12/":s)+a},
 $S:220}
 A.Jf.prototype={
 WL(){var s=this.abO(),r=$.b8.bQ().ImageFilter.MakeColorFilter(s,null)
@@ -94338,7 +94338,7 @@ B.ij=new A.Pl(0,"individual")
 B.fs=new A.Pl(1,"uniform")
 B.ft=new A.qv(0,"selected")
 B.PZ=new A.qv(1,"hovered")
-B.zx=new A.qv(2,"normal")
+B.zx=new A.qv(2,"unselected")
 B.lv=new A.Px(0,"inner")
 B.zy=new A.Px(2,"outer")
 B.ik=new A.CK(0,"all")
